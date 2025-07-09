@@ -17,11 +17,7 @@ const About3Demo = () => {
         buttonText: "Explore Our Mission",
         buttonUrl: "/about",
       }}
-      companies={undefined}
-      achievements={undefined}
-      companiesTitle={undefined}
-      achievementsTitle={undefined}
-      achievementsDescription={undefined}
+
     />
   );
 };
