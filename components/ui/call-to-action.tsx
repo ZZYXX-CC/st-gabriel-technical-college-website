@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PhoneCall, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 function CTA() {
   return (
@@ -10,15 +11,7 @@ function CTA() {
           {/* Left side - Illustration Space */}
           <div className="relative h-96 lg:h-[500px] order-2 lg:order-1">
             <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-              {/* SVG illustration will be added here */}
-              <div className="text-gray-400 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
-                  <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <p className="text-sm font-medium">Illustration placeholder</p>
-              </div>
+              <Image src="/asset/VideoCall.svg" alt="Students collaborating" fill className="object-contain" />
             </div>
           </div>
           

@@ -35,21 +35,21 @@ const programsData = [
       {
         title: "Masonry and Stonework",
         description: "Master brick laying, stone cutting, and structural masonry techniques for construction projects.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/masonry.jpg",
         icon: Brick,
       },
       {
         title: "Painting and Decoration",
         description:
           "Covers surface preparation, color theory, and decorative techniques for residential and commercial applications.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/painting.jpg",
         icon: Paintbrush,
       },
       {
         title: "Tiling and Floor Installation",
         description:
           "Specialized program teaching ceramic, stone, and specialty tile installation with precision techniques.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/tiling.jpg",
         icon: Tally,
       },
     ],
@@ -62,41 +62,41 @@ const programsData = [
         title: "AutoCare Technology",
         description:
           "Comprehensive automotive program equipping students with modern vehicle maintenance and repair skills.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/auto.jpeg",
         icon: Car,
       },
       {
         title: "Electrical Installation and Maintenance",
         description:
           "Thorough training in electrical systems, wiring, and safety protocols for residential and commercial work.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/electricals.png",
         icon: Zap,
       },
       {
         title: "Plumbing and Pipeline Services",
         description: "Covers modern plumbing techniques, pipe installation, and water system maintenance.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/plumbing.jpg",
         icon: Droplet,
       },
       {
         title: "HVAC Systems Technology",
         description:
           "Master heating, ventilation, and air conditioning systems installation and maintenance, including energy-efficient technologies.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/hvac.jpg",
         icon: Thermometer,
       },
       {
         title: "Welding and Fabrication",
         description:
           "Hands-on program teaching various welding techniques and metal fabrication skills with modern equipment.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/welding.png",
         icon: Hammer,
       },
       {
         title: "Carpentry and Joinery",
         description:
           "Combines traditional woodworking techniques with modern construction methods for furniture making and construction carpentry.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/carpentry.jpg",
         icon: HardHat,
       },
     ],
@@ -109,27 +109,27 @@ const programsData = [
         title: "Cybersecurity Fundamentals",
         description:
           "Cutting-edge program addressing the growing demand for cybersecurity professionals, covering network security and threat assessment.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/cyber.png",
         icon: ShieldCheck,
       },
       {
         title: "Computer System Repairs and Maintenance",
         description:
           "Master hardware troubleshooting, system optimization, and computer maintenance, preparing graduates for technical support.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/computer.jpg",
         icon: Laptop,
       },
       {
         title: "Digital Marketing Strategies",
         description:
           "Covers social media marketing, content creation, and online advertising strategies for business growth.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/marketing.jpg",
         icon: Megaphone,
       },
       {
         title: "Data Analytics and Business Intelligence",
         description: "Teaches students to collect, analyze, and interpret data for business decision-making.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/data.jpg",
         icon: BarChart,
       },
     ],
@@ -142,27 +142,27 @@ const programsData = [
         title: "Fashion Design and Tailoring",
         description:
           "Develop skills in garment construction, pattern making, and fashion design, combining traditional and contemporary trends.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/fashion.jpg",
         icon: Shirt,
       },
       {
         title: "Catering and Hospitality Management",
         description:
           "Comprehensive program covering food preparation, service excellence, and hospitality business management.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/catering.jpg",
         icon: Utensils,
       },
       {
         title: "Photography and Visual Arts",
         description:
           "Learn traditional and digital photography techniques, including photo editing and visual storytelling.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/photography.jpg",
         icon: Camera,
       },
       {
         title: "Videography and Media Production",
         description: "Teaches video production, editing, and media content creation with professional equipment.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/videography.jpg",
         icon: Video,
       },
     ],
@@ -175,14 +175,14 @@ const programsData = [
         title: "Renewable Energy Systems",
         description:
           "Learn solar panel installation, wind energy systems, and sustainable energy technologies for the growing renewable energy sector.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/renewable.jpg",
         icon: Sun,
       },
       {
         title: "Animal Husbandry and Agricultural Technology",
         description:
           "Combines traditional animal care with modern agricultural practices, including livestock management and agricultural business principles.",
-        image: "/placeholder.svg?height=200&width=300",
+        image: "/asset/animal.jpg",
         icon: PiggyBank,
       },
     ],
@@ -193,13 +193,13 @@ export default function ProgramsPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section for Programs */}
-      <section className="relative w-full h-[400px] flex items-center justify-center text-center overflow-hidden bg-stg-gray pt-16 md:pt-20">
+      <section className="relative w-full h-[400px] flex items-center justify-center text-center overflow-hidden bg-stg-gray pt-16 md:pt-20 animate-fade-in">
         <Image
-          src="/placeholder.svg?height=400&width=1600"
+          src="/asset/hero-programs.jpg"
           alt="Students in a lab setting"
-          layout="fill"
-          objectFit="cover"
-          className="z-0 brightness-50"
+          fill
+          className="object-cover z-0 brightness-50"
+          priority
         />
         <div className="relative z-10 px-4 md:px-6 max-w-3xl space-y-4 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">
@@ -225,10 +225,10 @@ export default function ProgramsPage() {
                 {category.programs.map((program, pIndex) => (
                   <Card
                     key={program.title}
-                    className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl"
+                    className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in-up"
                   >
                     <Image
-                      src={program.image || "/placeholder.svg"}
+                      src={program.image}
                       alt={program.title}
                       width={300}
                       height={200}

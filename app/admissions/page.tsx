@@ -135,13 +135,13 @@ export default function AdmissionsPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center text-center overflow-hidden bg-stg-sky-blue">
+      <section className="relative w-full h-[500px] flex items-center justify-center text-center overflow-hidden bg-stg-sky-blue animate-fade-in">
         <Image
-          src="/placeholder.svg?height=500&width=1600"
+          src="/asset/hero-admissions.jpg"
           alt="Students filling out application forms"
-          layout="fill"
-          objectFit="cover"
-          className="z-0 brightness-50"
+          fill
+          className="object-cover z-0 brightness-50"
+          priority
         />
         <div className="relative z-10 px-4 md:px-6 max-w-4xl space-y-6 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">

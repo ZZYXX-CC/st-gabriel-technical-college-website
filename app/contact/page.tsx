@@ -9,13 +9,13 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section for Contact */}
-      <section className="relative w-full h-[400px] flex items-center justify-center text-center overflow-hidden bg-stg-yellow">
+      <section className="relative w-full h-[400px] flex items-center justify-center text-center overflow-hidden bg-stg-yellow animate-fade-in">
         <Image
-          src="/placeholder.svg?height=400&width=1600"
+          src="/asset/hero-contact.jpg"
           alt="School building exterior"
-          layout="fill"
-          objectFit="cover"
-          className="z-0 brightness-50"
+          fill
+          className="object-cover z-0 brightness-50"
+          priority
         />
         <div className="relative z-10 px-4 md:px-6 max-w-3xl space-y-4 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">
@@ -122,12 +122,19 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map Section */}
       <section className="py-16 md:py-24 bg-stg-gray">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Find Us on the Map</h2>
-          <div className="w-full h-[400px] bg-gray-300 rounded-lg overflow-hidden flex items-center justify-center text-stg-gray text-xl font-semibold">
-            {"{"} Map Embed Placeholder {"}"}
+          <div className="w-full h-[400px] rounded-lg overflow-hidden">
+            <iframe
+              title="St. Gabriel Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5483430769976!2d7.480045174895201!3d6.448112625311071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104371f2b065bf0b%3A0x5d4fa9acd6e8b1a6!2sEnugu!5e0!3m2!1sen!2sng!4v1690910134201!5m2!1sen!2sng"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>
