@@ -61,6 +61,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6">
                   <Target className="w-8 h-8 text-white" />
                 </div>
+                
                 <h3 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">Our Mission</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   At St. Gabriel Technical Institute, our mission centers on empowering individuals with practical skills
@@ -78,6 +79,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6">
                   <BookOpen className="w-8 h-8 text-stg-gray" />
                 </div>
+                
                 <h3 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">Our Vision</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We aspire to become a leading center of excellence in technical education, renowned for our commitment
@@ -95,6 +97,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6">
                   <Award className="w-8 h-8 text-white" />
                 </div>
+                
                 <h3 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">Core Values</h3>
                 <ul className="space-y-4 text-lg text-gray-700 leading-relaxed list-none p-0">
                   <li className="flex items-start gap-3">
@@ -152,6 +155,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mb-6">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Classroom with modern tools" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Industry-Relevant Curriculum</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Developed in collaboration with industry experts, ensuring our training programs align with current
@@ -166,6 +170,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mb-6">
                   <GraduationCap className="w-8 h-8 text-stg-gray" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Instructor teaching class" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Experienced Faculty</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Brings real-world expertise and insights into every classroom, combining extensive industry experience
@@ -180,6 +185,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mb-6">
                   <Wrench className="w-8 h-8 text-white" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Modern lab equipment" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">State-of-the-Art Facilities</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Feature modern equipment and cutting-edge technology, providing students with hands-on experience
@@ -195,6 +201,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mb-6">
                   <Users className="w-8 h-8 text-white" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Student support event" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Comprehensive Support Services</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Include academic counseling, career guidance, and financial assistance, providing personalized
@@ -210,6 +217,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mb-6">
                   <Handshake className="w-8 h-8 text-stg-gray" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Industry partnership event" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Strong Industry Partnerships</h3>
                 <p className="text-gray-600 leading-relaxed">
                   With leading companies and organizations provide students with internship opportunities, industry
@@ -225,6 +233,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mb-6">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Job fair" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Job Placement Assistance</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Includes resume building, interview preparation, and direct connections with potential employers,
@@ -264,6 +273,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Quote className="w-8 h-8 text-white" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Emmanuel Okoro" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
                 <p className="text-gray-700 text-lg leading-relaxed italic">
                   "St. Gabriel Technical Institute transformed my career prospects completely. The hands-on
                   training with modern diagnostic equipment prepared me for immediate employment at a leading automotive
@@ -283,6 +293,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Quote className="w-8 h-8 text-stg-gray" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Chioma Nnamdi" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
                 <p className="text-gray-700 text-lg leading-relaxed italic">
                   "The digital marketing program at St. Gabriel exceeded my expectations. I launched my own
                   marketing consultancy immediately after graduation and now serve clients across Nigeria."
@@ -301,6 +312,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Quote className="w-8 h-8 text-white" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Joseph Eze" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
                 <p className="text-gray-700 text-lg leading-relaxed italic">
                   "After completing the electrical installation program, I started my own electrical services
                   company. The comprehensive training gave me confidence to take on diverse projects."
@@ -319,6 +331,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Quote className="w-8 h-8 text-white" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Blessing Ugwu" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
                 <p className="text-gray-700 text-lg leading-relaxed italic">
                   "The fashion design program provided me with both creative skills and business knowledge. Now I
                   run a successful fashion boutique and have dressed several celebrities."
@@ -337,6 +350,7 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Quote className="w-8 h-8 text-stg-gray" />
                 </div>
+                <Image src="/placeholder.jpg" alt="Michael Okafor" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
                 <p className="text-gray-700 text-lg leading-relaxed italic">
                   "The cybersecurity program at St. Gabriel prepared me for one of the fastest-growing fields in
                   technology. I now work as a cybersecurity analyst for a major financial institution."

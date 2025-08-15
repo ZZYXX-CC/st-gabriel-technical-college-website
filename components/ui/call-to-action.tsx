@@ -11,7 +11,7 @@ function CTA() {
           {/* Left side - Illustration Space */}
           <div className="relative h-96 lg:h-[500px] order-2 lg:order-1">
             <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-              <Image src="/asset/VideoCall.svg" alt="Students collaborating" fill className="object-contain" />
+              <Image src="/front.jpg" alt="St. Gabriel Technical Institute Front" fill className="object-cover" />
             </div>
           </div>
           

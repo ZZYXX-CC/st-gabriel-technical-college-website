@@ -35,21 +35,21 @@ const programsData = [
       {
         title: "Masonry and Stonework",
         description: "Master brick laying, stone cutting, and structural masonry techniques for construction projects.",
-        image: "/asset/masonry.jpg",
+        image: "/asset/masonry.png",
         icon: Brick,
       },
       {
         title: "Painting and Decoration",
         description:
           "Covers surface preparation, color theory, and decorative techniques for residential and commercial applications.",
-        image: "/asset/painting.jpg",
+        image: "/asset/paint.png",
         icon: Paintbrush,
       },
       {
         title: "Tiling and Floor Installation",
         description:
           "Specialized program teaching ceramic, stone, and specialty tile installation with precision techniques.",
-        image: "/asset/tiling.jpg",
+        image: "/asset/tiling.png",
         icon: Tally,
       },
     ],
@@ -75,14 +75,14 @@ const programsData = [
       {
         title: "Plumbing and Pipeline Services",
         description: "Covers modern plumbing techniques, pipe installation, and water system maintenance.",
-        image: "/asset/plumbing.jpg",
+        image: "/asset/plumbing.png",
         icon: Droplet,
       },
       {
         title: "HVAC Systems Technology",
         description:
           "Master heating, ventilation, and air conditioning systems installation and maintenance, including energy-efficient technologies.",
-        image: "/asset/hvac.jpg",
+        image: "/asset/hvac.png",
         icon: Thermometer,
       },
       {
@@ -96,7 +96,7 @@ const programsData = [
         title: "Carpentry and Joinery",
         description:
           "Combines traditional woodworking techniques with modern construction methods for furniture making and construction carpentry.",
-        image: "/asset/carpentry.jpg",
+        image: "/asset/carpentry.png",
         icon: HardHat,
       },
     ],
@@ -116,20 +116,20 @@ const programsData = [
         title: "Computer System Repairs and Maintenance",
         description:
           "Master hardware troubleshooting, system optimization, and computer maintenance, preparing graduates for technical support.",
-        image: "/asset/computer.jpg",
+        image: "/asset/computrt-repairs.png",
         icon: Laptop,
       },
       {
         title: "Digital Marketing Strategies",
         description:
           "Covers social media marketing, content creation, and online advertising strategies for business growth.",
-        image: "/asset/marketing.jpg",
+        image: "/asset/digital-marketing.png",
         icon: Megaphone,
       },
       {
         title: "Data Analytics and Business Intelligence",
         description: "Teaches students to collect, analyze, and interpret data for business decision-making.",
-        image: "/asset/data.jpg",
+        image: "/asset/data-analytics.png",
         icon: BarChart,
       },
     ],
@@ -142,27 +142,27 @@ const programsData = [
         title: "Fashion Design and Tailoring",
         description:
           "Develop skills in garment construction, pattern making, and fashion design, combining traditional and contemporary trends.",
-        image: "/asset/fashion.jpg",
+        image: "/asset/fashion-design.png",
         icon: Shirt,
       },
       {
         title: "Catering and Hospitality Management",
         description:
           "Comprehensive program covering food preparation, service excellence, and hospitality business management.",
-        image: "/asset/catering.jpg",
+        image: "/asset/catering.png",
         icon: Utensils,
       },
       {
         title: "Photography and Visual Arts",
         description:
           "Learn traditional and digital photography techniques, including photo editing and visual storytelling.",
-        image: "/asset/photography.jpg",
+        image: "/asset/photography.png",
         icon: Camera,
       },
       {
         title: "Videography and Media Production",
         description: "Teaches video production, editing, and media content creation with professional equipment.",
-        image: "/asset/videography.jpg",
+        image: "/asset/videography.png",
         icon: Video,
       },
     ],
@@ -175,14 +175,14 @@ const programsData = [
         title: "Renewable Energy Systems",
         description:
           "Learn solar panel installation, wind energy systems, and sustainable energy technologies for the growing renewable energy sector.",
-        image: "/asset/renewable.jpg",
+        image: "/asset/energy.png",
         icon: Sun,
       },
       {
         title: "Animal Husbandry and Agricultural Technology",
         description:
           "Combines traditional animal care with modern agricultural practices, including livestock management and agricultural business principles.",
-        image: "/asset/animal.jpg",
+        image: "/asset/animal-husbandry.png",
         icon: PiggyBank,
       },
     ],
@@ -195,10 +195,10 @@ export default function ProgramsPage() {
       {/* Hero Section for Programs */}
       <section className="relative w-full h-[400px] flex items-center justify-center text-center overflow-hidden bg-stg-gray pt-16 md:pt-20 animate-fade-in">
         <Image
-          src="/asset/hero-programs.jpg"
-          alt="Students in a lab setting"
+          src="/front-w.jpg"
+          alt="St. Gabriel Technical Institute Front"
           fill
-          className="object-cover z-0 brightness-50"
+          className="object-cover opacity-40"
           priority
         />
         <div className="relative z-10 px-4 md:px-6 max-w-3xl space-y-4 animate-fade-in">
