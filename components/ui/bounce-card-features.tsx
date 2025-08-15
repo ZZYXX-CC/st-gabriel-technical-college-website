@@ -85,7 +85,7 @@ export const BouncyCardsFeatures = () => {
                      AutoCare Technology
                    </div>
                  </CardTitle>
-                <div className="absolute bottom-0 left-4 right-4 top-28 translate-y-8 rounded-t-2xl bg-gradient-to-br from-blue-400/30 to-sky-400/30 backdrop-blur-[2px] p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+                <div className="absolute bottom-0 left-4 right-4 top-28 translate-y-8 rounded-t-2xl bg-gradient-to-br from-blue-400/30 to-sky-400/30 backdrop-blur-[2px] p-4 transition-transform duration-\ [250ms\ ] group-hover:translate-y-4 group-hover:rotate-[2deg]">
                   <div className="flex flex-col items-center justify-center h-full text-center">
                     <GraduationCap className="w-12 h-12 text-blue-50 mb-2" />
                     <span className="block font-semibold text-blue-50 text-sm">
@@ -108,7 +108,7 @@ export const BouncyCardsFeatures = () => {
                    Cybersecurity Fundamentals
                  </div>
                </CardTitle>
-               <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-emerald-400/50 to-teal-400/50 backdrop-blur-sm p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+               <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-emerald-400/50 to-teal-400/50 backdrop-blur-sm p-4 transition-transform duration-\ [250ms\ ] group-hover:translate-y-4 group-hover:rotate-[2deg]">
                 <div className="flex flex-col items-center justify-center h-full text-center">
                   <Zap className="w-12 h-12 text-teal-50 mb-2" />
                   <span className="block font-semibold text-teal-50 text-sm">
@@ -133,7 +133,7 @@ export const BouncyCardsFeatures = () => {
                    Electrical Installation & Maintenance
                  </div>
                </CardTitle>
-              <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-amber-400/30 to-orange-400/30 backdrop-blur-[2px] p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+              <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-amber-400/30 to-orange-400/30 backdrop-blur-[2px] p-4 transition-transform duration-\ [250ms\ ] group-hover:translate-y-4 group-hover:rotate-[2deg]">
                 <div className="flex flex-col items-center justify-center h-full text-center">
                   <Users className="w-12 h-12 text-orange-50 mb-2" />
                   <span className="block font-semibold text-orange-50 text-sm">
@@ -157,7 +157,7 @@ export const BouncyCardsFeatures = () => {
                    Welding & Fabrication
                  </div>
                </CardTitle>
-              <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-rose-400/30 to-pink-400/30 backdrop-blur-[2px] p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+              <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-rose-400/30 to-pink-400/30 backdrop-blur-[2px] p-4 transition-transform duration-\ [250ms\ ] group-hover:translate-y-4 group-hover:rotate-[2deg]">
                 <div className="flex flex-col items-center justify-center h-full text-center">
                   <Award className="w-12 h-12 text-pink-50 mb-2" />
                   <span className="block font-semibold text-pink-50 text-sm">

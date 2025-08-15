@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import {
   FileText,
   Users,
@@ -17,6 +18,7 @@ import {
   Globe,
   MapPin,
 } from "lucide-react"
+import { ApplicationForm } from "@/components/application-form";
 
 const programRequirements = [
   {
@@ -137,10 +139,10 @@ export default function AdmissionsPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[500px] flex items-center justify-center text-center overflow-hidden bg-stg-sky-blue animate-fade-in">
         <Image
-          src="/asset/hero-admissions.jpg"
-          alt="Students filling out application forms"
+          src="/front-w.jpg"
+          alt="St. Gabriel Technical Institute Front"
           fill
-          className="object-cover z-0 brightness-50"
+          className="object-cover opacity-40"
           priority
         />
         <div className="relative z-10 px-4 md:px-6 max-w-4xl space-y-6 animate-fade-in">
@@ -208,7 +210,17 @@ export default function AdmissionsPage() {
                     Instant confirmation receipt
                   </li>
                 </ul>
-                <Button className="w-full bg-stg-sky-blue text-white hover:bg-stg-sky-blue/90">Apply Online Now</Button>
+                <Dialog>
+  <DialogTrigger asChild>
+    <Button className="w-full bg-stg-sky-blue text-white hover:bg-stg-sky-blue/90">Apply Online Now</Button>
+  </DialogTrigger>
+  <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+    <DialogHeader>
+      <DialogTitle>Application Form</DialogTitle>
+    </DialogHeader>
+    <ApplicationForm />
+  </DialogContent>
+</Dialog>
               </CardContent>
             </Card>
 
@@ -479,30 +491,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 md:py-24 bg-stg-gray text-white text-center">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Apply?</h2>
-          <p className="text-lg text-gray-200 mb-8">
-            Take the first step toward your technical career. Our admissions team is here to guide you through the
-            process.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              className="bg-stg-yellow text-stg-gray hover:bg-stg-yellow/90 px-10 py-4 text-xl font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105"
-            >
-              <Link href="/contact">Start Your Application</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-stg-gray px-10 py-4 text-xl font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105"
-            >
-              <Link href="/contact">Contact Admissions</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   )
 }
