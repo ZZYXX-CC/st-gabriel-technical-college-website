@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore macOS metadata files
+._*
+
+# Ignore macOS metadata files
+._*
