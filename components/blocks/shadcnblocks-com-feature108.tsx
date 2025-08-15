@@ -9,6 +9,7 @@ interface TabContent {
   title: string;
   description: string;
   buttonText: string;
+  buttonLink?: string;
   imageSrc: string;
   imageAlt: string;
 }
@@ -126,9 +127,17 @@ const Feature108 = ({
                   <p className="text-muted-foreground lg:text-lg">
                     {tab.content.description}
                   </p>
+                  {tab.content.buttonLink ? (
+                  <a href={tab.content.buttonLink} target="_blank" rel="noopener noreferrer">
+                    <Button className="mt-2.5 w-fit gap-2 bg-accent hover:bg-accent/90 text-accent-foreground" size="lg">
+                      {tab.content.buttonText}
+                    </Button>
+                  </a>
+                ) : (
                   <Button className="mt-2.5 w-fit gap-2 bg-accent hover:bg-accent/90 text-accent-foreground" size="lg">
                     {tab.content.buttonText}
                   </Button>
+                )}
                 </div>
                 <img
                   src={tab.content.imageSrc}
