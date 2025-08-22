@@ -1,5 +1,5 @@
-import Component from "@/components/ui/subtle-button";
+import InteractiveCards from "@/components/ui/interactive-bento-grid";
 
 export default function DemoOne() {
-  return <Component />;
+  return <InteractiveCards />;
 }

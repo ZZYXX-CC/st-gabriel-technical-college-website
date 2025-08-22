@@ -97,7 +97,7 @@ export function Footer() {
                   { href: "#", label: "Student Portal", external: false },
                   { href: "https://st-gabriels-technical-schools-lms.vercel.app/", label: "Online Courses (LMS)", external: true },
                   { href: "#", label: "Student Life", external: false },
-                  { href: "#", label: "Alumni Network", external: false },
+                  { href: "https://store.stgabrieltech.com", label: "Store", external: true },
                   { href: "#", label: "News & Events", external: false }
                 ].map(({ href, label, external }) => (
                   <Link 
@@ -181,7 +181,7 @@ export function Footer() {
             <div className="mt-4 text-center md:text-left">
               <p className="text-xs text-gray-500">
                 Accredited by the National Board for Technical Education (NBTE) • {" "}
-                <span className="text-stg-yellow">Building Tomorrow's Technical Leaders</span>
+                <span className="text-stg-yellow">Building Tomorrow&apos;s Technical Leaders</span>
               </p>
             </div>
           </div>

@@ -316,7 +316,7 @@ export default function AdmissionsPage() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      Valid ID (National ID, Voter's Card, etc.)
+                      Valid ID (National ID, Voter&apos;s Card, etc.)
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-stg-yellow" />

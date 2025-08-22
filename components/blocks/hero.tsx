@@ -28,7 +28,7 @@ export default function Globe3D() {
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto text-center leading-relaxed">
             St. Gabriel Technical College combines cutting-edge technology with
-            hands-on learning to prepare you for tomorrow's careers in
+            hands-on learning to prepare you for tomorrow&apos;s careers in
             engineering, technology, and innovation.
           </p>
 
@@ -40,7 +40,7 @@ export default function Globe3D() {
               Apply Now
             </Link>
             <a
-              href="#programs"
+              href="/programs"
               className="flex w-full items-center justify-center gap-2 text-gray-600 transition-colors hover:text-[#4a94c4] sm:w-auto"
             >
               <span>Explore Programs</span>

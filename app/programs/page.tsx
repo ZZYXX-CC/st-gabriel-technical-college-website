@@ -1,6 +1,10 @@
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { AnimatedCard, CardBody as AnimatedCardBody, CardTitle as AnimatedCardTitle, CardDescription as AnimatedCardDescription, CardVisual } from "@/components/ui/interactive-bento-grid"
+import LottieVisual from "@/components/ui/lottie-visual"
+import { AnalyticsVisual, WaveVisual, GeometricVisual, NetworkVisual } from "@/components/ui/interactive-bento-grid"
 import Link from "next/link"
 import {
   Car,
@@ -25,6 +29,9 @@ import {
   Code,
   Building,
   Lightbulb,
+  ShoppingBag,
+  Briefcase,
+  Sparkles,
 } from "lucide-react"
 
 const programsData = [
@@ -254,11 +261,93 @@ export default function ProgramsPage() {
         </div>
       </section>
 
+      {/* Earn While You Study Section (Interactive Cards) */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-gray-200 text-stg-sky-blue border-gray-300">Opportunity</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold">
+              <span className="text-stg-sky-blue">Earn While You Study</span>
+            </h2>
+            <p className="mt-4 text-lg md:text-xl text-stg-gray max-w-3xl mx-auto">
+              List your products or services on our school-backed online store, connect with real customers, and start earning while you learn.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 place-items-center">
+            {[
+              { icon: ShoppingBag, title: "School-backed visibility", desc: "Reach customers who trust our platform", visual: (
+                <LottieVisual
+                  src="https://lottie.host/1e716099-5349-475e-9c06-a84cf538354e/I3gknEluWE.lottie"
+                  width={380}
+                  height={200}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.25)"
+                />
+              ) },
+              { icon: ShieldCheck, title: "Fair, transparent fees", desc: "Student-first policies—keep more of what you earn", visual: (
+                <LottieVisual src="https://lottie.host/9c05b91c-4fac-4a8e-84c5-ca7fe0bb95f5/6mGM11WA8f.lottie" width={380} height={200} autoplay loop />
+              ) },
+              { icon: Briefcase, title: "Real clients & projects", desc: "Gain practical experience while you study", visual: (
+                <LottieVisual
+                  src="https://lottie.host/f7794f73-b8e5-422d-b93a-9780bfe2102c/RrGKhgBzN1.lottie"
+                  width={380}
+                  height={200}
+                  autoplay
+                  loop
+                />
+              ) },
+              { icon: Sparkles, title: "Build your brand", desc: "Grow your portfolio and reputation", visual: (
+                <LottieVisual
+                  src="https://lottie.host/54cde0d3-e112-4946-a59d-8dfd0798e0a7/xk5fgxfJrx.lottie"
+                  width={380}
+                  height={200}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)" // light blue grid
+                />
+              ) },
+            ].map(({ icon: Icon, title, desc, visual }) => (
+              <AnimatedCard key={title} className="w-full">
+                <CardVisual>
+                  {visual}
+                </CardVisual>
+                <AnimatedCardBody>
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 rounded-xl p-3 bg-white/70 border border-white/50 shadow-inner">
+                      <Icon className="h-6 w-6 text-stg-sky-blue" />
+                    </div>
+                    <div>
+                      <AnimatedCardTitle className="text-stg-sky-blue">{title}</AnimatedCardTitle>
+                      <AnimatedCardDescription className="text-stg-gray mt-2">{desc}</AnimatedCardDescription>
+                    </div>
+                  </div>
+                </AnimatedCardBody>
+              </AnimatedCard>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild className="bg-stg-sky-blue hover:bg-stg-sky-blue/90 text-white">
+              <a href="https://store.stgabrieltech.com" target="_blank" rel="noopener noreferrer">Visit the Store</a>
+            </Button>
+            <Button asChild variant="outline" className="border-gray-300 text-stg-sky-blue hover:bg-gray-100">
+              <a href="https://store.stgabrieltech.com" target="_blank" rel="noopener noreferrer">Start Selling</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Online Learning Section */}
       <section className="py-16 md:py-24 bg-stg-yellow">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">
-            Can't Attend On-Campus? Try Our Online Courses
+            Can&apos;t Attend On-Campus? Try Our Online Courses
           </h2>
           <p className="text-lg text-stg-gray mb-8 max-w-3xl mx-auto">
             Access many of our technical programs through our comprehensive Learning Management System. Perfect for

@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import Image from "next/image";
-import { Monitor, Clock, Globe, Calendar, ArrowRight } from "lucide-react";
+import { Monitor, Clock, Globe, Calendar, ArrowRight, ShoppingBag, ShieldCheck, Briefcase, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,6 +10,9 @@ import { BouncyCardsFeatures } from "@/components/ui/bounce-card-features";
 import { About3Demo } from "@/components/blocks/about-3-demo";
 import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108";
 import Globe3D from "@/components/blocks/hero";
+import { AnimatedCard, CardBody as AnimatedCardBody, CardTitle as AnimatedCardTitle, CardDescription as AnimatedCardDescription, CardVisual } from "@/components/ui/interactive-bento-grid";
+import { AnalyticsVisual, WaveVisual, GeometricVisual, NetworkVisual } from "@/components/ui/interactive-bento-grid";
+import LottieVisual from "@/components/ui/lottie-visual";
 
 export default function HomePage() {
   return (
@@ -41,6 +44,89 @@ export default function HomePage() {
 
       {/* Call to Action Section */}
       <CTA />
+
+      {/* Earn While You Study Section */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200" />
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-gray-200 text-stg-sky-blue border-gray-300">Opportunity</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold">
+              <span className="text-stg-sky-blue">Earn While You Study</span>
+            </h2>
+            <p className="mt-4 text-lg md:text-xl text-stg-gray max-w-3xl mx-auto">
+              At St. Gabriel Technical College, students don’t just learn — they earn. List your products or services on our school-backed online store, connect with real customers, and start making money while building your portfolio and professional reputation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 place-items-center">
+            {[
+              { icon: ShoppingBag, title: "School-backed visibility", desc: "Reach customers who trust our platform", visual: (
+                <LottieVisual
+                  src="https://lottie.host/1e716099-5349-475e-9c06-a84cf538354e/I3gknEluWE.lottie"
+                  width={380}
+                  height={200}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.25)"
+                />
+              ) },
+              { icon: ShieldCheck, title: "Fair, transparent fees", desc: "Student-first policies—keep more of what you earn", visual: (
+                <LottieVisual src="https://lottie.host/9c05b91c-4fac-4a8e-84c5-ca7fe0bb95f5/6mGM11WA8f.lottie" width={380} height={200} autoplay loop />
+              ) },
+              { icon: Briefcase, title: "Real clients & projects", desc: "Gain practical experience while you study", visual: (
+                <LottieVisual
+                  src="https://lottie.host/f7794f73-b8e5-422d-b93a-9780bfe2102c/RrGKhgBzN1.lottie"
+                  width={380}
+                  height={200}
+                  autoplay
+                  loop
+                />
+              ) },
+              { icon: Sparkles, title: "Build your brand", desc: "Grow your portfolio and reputation", visual: (
+                <LottieVisual
+                  src="https://lottie.host/54cde0d3-e112-4946-a59d-8dfd0798e0a7/xk5fgxfJrx.lottie"
+                  width={380}
+                  height={200}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                />
+              ) },
+            ].map(({ icon: Icon, title, desc, visual }) => (
+              <AnimatedCard key={title} className="w-full">
+                <CardVisual>
+                  {visual}
+                </CardVisual>
+                <AnimatedCardBody>
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 rounded-xl p-3 bg-white/70 border border-white/50 shadow-inner">
+                      <Icon className="h-6 w-6 text-stg-sky-blue" />
+                    </div>
+                    <div>
+                      <AnimatedCardTitle className="text-stg-sky-blue">{title}</AnimatedCardTitle>
+                      <AnimatedCardDescription className="text-stg-gray mt-2">{desc}</AnimatedCardDescription>
+                    </div>
+                  </div>
+                </AnimatedCardBody>
+              </AnimatedCard>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild className="bg-stg-sky-blue hover:bg-stg-sky-blue/90 text-white">
+              <a href="https://store.stgabrieltech.com" target="_blank" rel="noopener noreferrer">Visit the Store</a>
+            </Button>
+            <Button asChild variant="outline" className="border-gray-300 text-stg-sky-blue hover:bg-gray-100">
+              <a href="https://store.stgabrieltech.com" target="_blank" rel="noopener noreferrer">Start Selling</a>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Online Learning Section (Replaced with Feature108) */}
       <Feature108
@@ -236,7 +322,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-stg-sky-blue to-stg-gray hover:from-stg-sky-blue/90 hover:to-stg-gray/90 text-white px-12 py-4 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+              className="bg-stg-sky-blue hover:bg-stg-sky-blue/90 text-white px-12 py-4 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
             >
               <Link href="/news-events" className="flex items-center gap-3">
                 View All Updates

@@ -1,7 +1,11 @@
+"use client"
+
 import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Lightbulb, Handshake, TrendingUp, Users, GraduationCap, Wrench, Quote, Target, BookOpen, Award } from "lucide-react"
+import LottieVisual from "@/components/ui/lottie-visual"
+import InteractiveBentoGallery from "@/components/ui/interactive-bento-gallery"
 
 export default function AboutUsPage() {
   return (
@@ -155,7 +159,17 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mb-6">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
-                <Image src="/placeholder.jpg" alt="Classroom with modern tools" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
+                <LottieVisual
+                  src="https://lottie.host/d2a0d5f5-6a3b-4d3a-bd4b-baf4f5c3d2f1/edu-curriculum.lottie"
+                  width={400}
+                  height={300}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.22)"
+                />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Industry-Relevant Curriculum</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Developed in collaboration with industry experts, ensuring our training programs align with current
@@ -170,7 +184,17 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mb-6">
                   <GraduationCap className="w-8 h-8 text-stg-gray" />
                 </div>
-                <Image src="/placeholder.jpg" alt="Instructor teaching class" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
+                <LottieVisual
+                  src="https://lottie.host/3a7d7f9f-1c0a-4d0b-9e3e-6e9a4e5a9c21/teacher-faculty.lottie"
+                  width={400}
+                  height={300}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.22)"
+                />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Experienced Faculty</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Brings real-world expertise and insights into every classroom, combining extensive industry experience
@@ -185,7 +209,17 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mb-6">
                   <Wrench className="w-8 h-8 text-white" />
                 </div>
-                <Image src="/placeholder.jpg" alt="Modern lab equipment" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
+                <LottieVisual
+                  src="https://lottie.host/8b2a1e6c-0a54-4b4a-91f5-0b0f6f2b3c77/facilities-tools.lottie"
+                  width={400}
+                  height={300}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.22)"
+                />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">State-of-the-Art Facilities</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Feature modern equipment and cutting-edge technology, providing students with hands-on experience
@@ -201,7 +235,17 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mb-6">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <Image src="/placeholder.jpg" alt="Student support event" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
+                <LottieVisual
+                  src="https://lottie.host/6f3f2e10-7c5b-49c9-a3e4-d0bfe7a6a9a1/support-services.lottie"
+                  width={400}
+                  height={300}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.22)"
+                />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Comprehensive Support Services</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Include academic counseling, career guidance, and financial assistance, providing personalized
@@ -217,7 +261,17 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mb-6">
                   <Handshake className="w-8 h-8 text-stg-gray" />
                 </div>
-                <Image src="/placeholder.jpg" alt="Industry partnership event" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
+                <LottieVisual
+                  src="https://lottie.host/1f9f2c34-2b5a-4d7e-9b8a-0f2d6c7b8e92/handshake-partnership.lottie"
+                  width={400}
+                  height={300}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.22)"
+                />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Strong Industry Partnerships</h3>
                 <p className="text-gray-600 leading-relaxed">
                   With leading companies and organizations provide students with internship opportunities, industry
@@ -233,7 +287,17 @@ export default function AboutUsPage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mb-6">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
-                <Image src="/placeholder.jpg" alt="Job fair" width={400} height={300} className="rounded-2xl mb-4 object-cover" />
+                <LottieVisual
+                  src="https://lottie.host/7e2d1a45-9b6f-4a9e-8d2f-3c4b5a6d7e8f/job-placement.lottie"
+                  width={400}
+                  height={300}
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.22)"
+                />
                 <h3 className="text-2xl font-bold text-stg-gray mb-4">Job Placement Assistance</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Includes resume building, interview preparation, and direct connections with potential employers,
@@ -245,123 +309,38 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Student Success Stories Section */}
+      {/* Gallery Section replacing Student Success Stories */}
       <section className="py-24 md:py-32 relative overflow-hidden">
-        {/* Premium gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-stg-gray/5 via-white to-stg-yellow/5" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,193,7,0.05),transparent_50%)]" />
-        
+
         <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
           {/* Section Header */}
           <div className="text-center mb-20">
             <Badge className="mb-6 bg-stg-gray/10 text-stg-gray border-stg-gray/20 hover:bg-stg-gray/20 transition-all duration-300">
-              Success Stories
+              Campus Gallery
             </Badge>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-stg-gray">Student Success Stories</span>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-stg-gray">
+              Life at St. Gabriel
             </h2>
             <p className="text-xl md:text-2xl text-stg-gray max-w-4xl mx-auto leading-relaxed">
-              Real stories from our graduates who have transformed their careers and achieved their dreams
+              Drag and explore our curated gallery of campus life, labs, and events.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-sky-blue/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 text-center space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Quote className="w-8 h-8 text-white" />
-                </div>
-                <Image src="/placeholder.jpg" alt="Emmanuel Okoro" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
-                <p className="text-gray-700 text-lg leading-relaxed italic">
-                  "St. Gabriel Technical Institute transformed my career prospects completely. The hands-on
-                  training with modern diagnostic equipment prepared me for immediate employment at a leading automotive
-                  service center."
-                </p>
-                <div className="pt-4 border-t border-gray-100">
-                  <div className="font-bold text-stg-gray text-lg">Emmanuel Okoro</div>
-                  <div className="text-stg-sky-blue font-medium">AutoCare Graduate</div>
-                </div>
-              </div>
-            </div>
 
-            {/* Testimonial 2 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-yellow/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 text-center space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Quote className="w-8 h-8 text-stg-gray" />
-                </div>
-                <Image src="/placeholder.jpg" alt="Chioma Nnamdi" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
-                <p className="text-gray-700 text-lg leading-relaxed italic">
-                  "The digital marketing program at St. Gabriel exceeded my expectations. I launched my own
-                  marketing consultancy immediately after graduation and now serve clients across Nigeria."
-                </p>
-                <div className="pt-4 border-t border-gray-100">
-                  <div className="font-bold text-stg-gray text-lg">Chioma Nnamdi</div>
-                  <div className="text-stg-yellow font-medium">Digital Marketing Specialist</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-gray/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 text-center space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Quote className="w-8 h-8 text-white" />
-                </div>
-                <Image src="/placeholder.jpg" alt="Joseph Eze" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
-                <p className="text-gray-700 text-lg leading-relaxed italic">
-                  "After completing the electrical installation program, I started my own electrical services
-                  company. The comprehensive training gave me confidence to take on diverse projects."
-                </p>
-                <div className="pt-4 border-t border-gray-100">
-                  <div className="font-bold text-stg-gray text-lg">Joseph Eze</div>
-                  <div className="text-stg-gray font-medium">Electrical Installation Entrepreneur</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 4 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-sky-blue/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 text-center space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Quote className="w-8 h-8 text-white" />
-                </div>
-                <Image src="/placeholder.jpg" alt="Blessing Ugwu" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
-                <p className="text-gray-700 text-lg leading-relaxed italic">
-                  "The fashion design program provided me with both creative skills and business knowledge. Now I
-                  run a successful fashion boutique and have dressed several celebrities."
-                </p>
-                <div className="pt-4 border-t border-gray-100">
-                  <div className="font-bold text-stg-gray text-lg">Blessing Ugwu</div>
-                  <div className="text-stg-sky-blue font-medium">Fashion Design Success</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial 5 */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-yellow/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 text-center space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Quote className="w-8 h-8 text-stg-gray" />
-                </div>
-                <Image src="/placeholder.jpg" alt="Michael Okafor" width={128} height={128} className="rounded-full mx-auto mb-4 object-cover" />
-                <p className="text-gray-700 text-lg leading-relaxed italic">
-                  "The cybersecurity program at St. Gabriel prepared me for one of the fastest-growing fields in
-                  technology. I now work as a cybersecurity analyst for a major financial institution."
-                </p>
-                <div className="pt-4 border-t border-gray-100">
-                  <div className="font-bold text-stg-gray text-lg">Michael Okafor</div>
-                  <div className="text-stg-yellow font-medium">Cybersecurity Professional</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <InteractiveBentoGallery
+            title=""
+            description=""
+            mediaItems={[
+              { id: 1, type: 'image', title: 'Campus Aerial', desc: 'A welcoming view of our campus', url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2' },
+              { id: 2, type: 'video', title: 'Hands-on Workshop', desc: 'Students collaborate on projects', url: 'https://cdn.pixabay.com/video/2024/07/24/222837_large.mp4', span: 'md:col-span-2 md:row-span-2 col-span-1 sm:col-span-2 sm:row-span-2' },
+              { id: 3, type: 'image', title: 'Modern Lab', desc: 'State-of-the-art equipment', url: 'https://images.unsplash.com/photo-1581093588401-16f8b8f3d38f?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-1 md:row-span-3 sm:col-span-2 sm:row-span-2' },
+              { id: 4, type: 'image', title: 'Library Study', desc: 'Quiet spaces to focus', url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2' },
+              { id: 5, type: 'video', title: 'Campus Walkthrough', desc: 'A day in student life', url: 'https://cdn.pixabay.com/video/2020/07/30/46026-447087782_large.mp4', span: 'md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2' },
+              { id: 6, type: 'image', title: 'Team Project', desc: 'Collaborative learning', url: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2' },
+              { id: 7, type: 'image', title: 'Graduation Day', desc: 'Celebrating achievements', url: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2' },
+            ]}
+          />
         </div>
       </section>
     </div>

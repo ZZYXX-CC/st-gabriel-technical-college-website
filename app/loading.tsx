@@ -1,9 +1,17 @@
-import { Loader } from "@/components/ui/loader";
+"use client"
+
+import LottieVisual from "@/components/ui/lottie-visual"
 
 export default function Loading() {
   return (
     <div className="flex h-screen items-center justify-center">
-      <Loader className="scale-150" />
+      <LottieVisual
+        src="https://lottie.host/35ea17b4-cd88-47c7-ae66-81c475622810/oktfIq5bpW.lottie"
+        width={180}
+        height={180}
+        autoplay
+        loop
+      />
     </div>
-  );
+  )
 }
