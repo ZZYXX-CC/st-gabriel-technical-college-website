@@ -14,7 +14,12 @@ export default function Globe3D() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 z-10">
         <div className="container relative z-10 mx-auto max-w-2xl px-4 text-center md:max-w-4xl md:px-6 lg:max-w-7xl">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <span className="inline-block px-4 py-2 bg-blue-100 backdrop-blur-sm rounded-full text-sm font-medium text-blue-800 border border-blue-200 mb-6">
             EXCELLENCE IN TECHNICAL EDUCATION
           </span>
@@ -47,15 +52,24 @@ export default function Globe3D() {
               <ChevronDown className="h-4 w-4" />
             </a>
           </div>
-        </div>
+        </motion.div>
         <div className="relative mt-12">
-          <div className="w-full flex h-80 md:h-96 lg:h-[32rem] relative overflow-hidden mb-8">
-            <img
+          <motion.div
+            className="w-full flex h-80 md:h-96 lg:h-[32rem] relative overflow-hidden mb-8"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          >
+            <Image
               src="/asset/hero.png"
               alt="St. Gabriel Technical College"
-              className="absolute top-0 left-1/2 -translate-x-1/2 mx-auto z-10 h-full w-auto object-contain"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1200px"
+              className="z-10 object-contain object-center"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
       </div>

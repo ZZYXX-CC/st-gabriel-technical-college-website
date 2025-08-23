@@ -18,8 +18,6 @@ export default function NotFound() {
       <div className="mb-8">
         <LottieVisual
           src="https://lottie.host/1d619d87-1d89-4621-a142-ecd22b5d28f9/1kMvHZ8Jrq.lottie"
-          width={380}
-          height={380}
           autoplay
           loop
           showGrid

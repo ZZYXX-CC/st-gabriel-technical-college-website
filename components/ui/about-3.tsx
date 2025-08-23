@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface About3Props {
   title?: string;
@@ -40,14 +42,23 @@ export const About3 = ({
   return (
     <section className="relative py-20 md:py-32 bg-stg-sky-blue overflow-hidden">
       <div className="absolute inset-0">
-        <img
+        <Image
           src={mainImage.src}
           alt={mainImage.alt}
-          className="w-full h-full object-cover opacity-20"
+          fill
+          priority={false}
+          sizes="100vw"
+          className="object-cover opacity-20"
         />
       </div>
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <motion.div
+          className="max-w-4xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <Badge className="mb-6 bg-white/20 text-white border-white/30">
             About Our Institute
           </Badge>
@@ -57,7 +68,7 @@ export const About3 = ({
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             {description}
           </p>
-        </div>
+        </motion.div>
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center text-white">
             <div className="text-4xl font-bold mb-2">20+</div>

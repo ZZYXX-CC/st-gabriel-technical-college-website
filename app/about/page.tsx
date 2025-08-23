@@ -161,8 +161,6 @@ export default function AboutUsPage() {
                 </div>
                 <LottieVisual
                   src="https://lottie.host/d2a0d5f5-6a3b-4d3a-bd4b-baf4f5c3d2f1/edu-curriculum.lottie"
-                  width={400}
-                  height={300}
                   autoplay
                   loop
                   showGrid
@@ -186,8 +184,6 @@ export default function AboutUsPage() {
                 </div>
                 <LottieVisual
                   src="https://lottie.host/3a7d7f9f-1c0a-4d0b-9e3e-6e9a4e5a9c21/teacher-faculty.lottie"
-                  width={400}
-                  height={300}
                   autoplay
                   loop
                   showGrid
@@ -211,8 +207,6 @@ export default function AboutUsPage() {
                 </div>
                 <LottieVisual
                   src="https://lottie.host/8b2a1e6c-0a54-4b4a-91f5-0b0f6f2b3c77/facilities-tools.lottie"
-                  width={400}
-                  height={300}
                   autoplay
                   loop
                   showGrid
@@ -237,8 +231,6 @@ export default function AboutUsPage() {
                 </div>
                 <LottieVisual
                   src="https://lottie.host/6f3f2e10-7c5b-49c9-a3e4-d0bfe7a6a9a1/support-services.lottie"
-                  width={400}
-                  height={300}
                   autoplay
                   loop
                   showGrid
@@ -263,8 +255,6 @@ export default function AboutUsPage() {
                 </div>
                 <LottieVisual
                   src="https://lottie.host/1f9f2c34-2b5a-4d7e-9b8a-0f2d6c7b8e92/handshake-partnership.lottie"
-                  width={400}
-                  height={300}
                   autoplay
                   loop
                   showGrid
@@ -289,8 +279,6 @@ export default function AboutUsPage() {
                 </div>
                 <LottieVisual
                   src="https://lottie.host/7e2d1a45-9b6f-4a9e-8d2f-3c4b5a6d7e8f/job-placement.lottie"
-                  width={400}
-                  height={300}
                   autoplay
                   loop
                   showGrid

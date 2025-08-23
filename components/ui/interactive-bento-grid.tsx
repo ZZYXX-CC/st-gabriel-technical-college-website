@@ -66,7 +66,7 @@ export function CardDescription({ className, ...props }: CardDescriptionProps) {
 export function CardVisual({ className, ...props }: CardProps) {
   return (
     <div
-      className={cn("h-[200px] w-[380px] overflow-hidden", className)}
+      className={cn("w-full aspect-[19/10] overflow-hidden", className)}
       {...props}
     />
   )

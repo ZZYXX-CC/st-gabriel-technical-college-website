@@ -2,6 +2,8 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -103,7 +105,13 @@ const Gallery4 = ({
   return (
     <section className="py-32 relative bg-[url('/asset/mobile.jpg')] md:bg-[url('/asset/bg-white.jpg')] bg-cover bg-center overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20">
-        <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
+        <motion.div
+          className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl bg-gradient-to-r from-stg-sky-blue to-stg-sky-blue/70 bg-clip-text text-transparent">
               {title}
@@ -134,7 +142,7 @@ const Gallery4 = ({
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="w-full relative z-20">
         <Carousel
@@ -148,19 +156,28 @@ const Gallery4 = ({
           }}
         >
           <CarouselContent className="ml-0 px-4 md:px-6 lg:px-8 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
-            {items.map((item) => (
+            {items.map((item, idx) => (
               <CarouselItem
                 key={item.id}
                 className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
               >
                 <a href={item.href} className="group block">
-                  <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                  <motion.div
+                    className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay: idx * 0.05 }}
+                  >
                     {/* Image Container */}
                     <div className="relative h-48 overflow-hidden rounded-t-2xl">
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.title}
-                        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 360px"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                        priority={false}
                       />
                       {/* Subtle gradient overlay for better text contrast */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -193,7 +210,7 @@ const Gallery4 = ({
                     
                     {/* Hover effect overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-stg-sky-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
-                  </div>
+                  </motion.div>
                 </a>
               </CarouselItem>
             ))}

@@ -3,13 +3,12 @@
 import { useEffect, useRef } from "react"
 import type { CSSProperties } from "react"
 import { DotLottie } from "@lottiefiles/dotlottie-web"
+import { cn } from "@/lib/utils"
 
 export type LottieVisualProps = {
   src: string // .lottie or .json URL or public path
   autoplay?: boolean
   loop?: boolean
-  width?: number
-  height?: number
   className?: string
   style?: CSSProperties
   showGrid?: boolean
@@ -31,8 +30,6 @@ export default function LottieVisual({
   src,
   autoplay = true,
   loop = true,
-  width = 380,
-  height = 200,
   className,
   style,
   showGrid = true,
@@ -40,6 +37,7 @@ export default function LottieVisual({
   showBlur = false,
   blurColor = "rgba(139,92,246,0.25)", // purple glow (#8b5cf6)
 }: LottieVisualProps) {
+  const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const playerRef = useRef<DotLottie | null>(null)
 
@@ -67,10 +65,37 @@ export default function LottieVisual({
     }
   }, [src, autoplay, loop])
 
+  useEffect(() => {
+    const container = containerRef.current
+    const canvas = canvasRef.current
+    if (!container || !canvas) return
+
+    const updateSize = () => {
+      const rect = container.getBoundingClientRect()
+      const dpr = window.devicePixelRatio || 1
+      canvas.width = rect.width * dpr
+      canvas.height = rect.height * dpr
+      canvas.style.width = `${rect.width}px`
+      canvas.style.height = `${rect.height}px`
+      if (playerRef.current) {
+        playerRef.current.resize()
+      }
+    }
+
+    updateSize()
+    const observer = new ResizeObserver(updateSize)
+    observer.observe(container)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
     <div
-      className={className}
-      style={{ position: "relative", width, height, overflow: "hidden", ...style }}
+      ref={containerRef}
+      className={cn("relative w-full h-full overflow-hidden", className)}
+      style={style}
     >
       {showGrid && (
         <div
@@ -105,8 +130,8 @@ export default function LottieVisual({
         >
           <div
             style={{
-              width: Math.max(width * 0.7, 220),
-              height: Math.max(height * 0.7, 120),
+              width: '70%',
+              height: '70%',
               borderRadius: "9999px",
               background: blurColor,
               filter: "blur(40px)",
@@ -116,8 +141,6 @@ export default function LottieVisual({
       )}
       <canvas
         ref={canvasRef}
-        width={width}
-        height={height}
         style={{ position: "relative", zIndex: 2, display: "block" }}
       />
     </div>

@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
+import Image from 'next/image'
 
 // MediaItemType defines the structure of a media item
 interface MediaItemType {
@@ -26,24 +27,28 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
       entries.forEach((entry) => { setIsInView(entry.isIntersecting) })
     }, options)
 
-    if (videoRef.current) observer.observe(videoRef.current)
+    const el = videoRef.current
+    if (el) observer.observe(el)
 
-    return () => { if (videoRef.current) observer.unobserve(videoRef.current) }
+    return () => {
+      if (el) observer.unobserve(el)
+    }
   }, [])
 
   // Handle video play/pause based on whether the video is in view or not
   useEffect(() => {
     let mounted = true
+    const el = videoRef.current
     const handleVideoPlay = async () => {
-      if (!videoRef.current || !isInView || !mounted) return
+      if (!el || !isInView || !mounted) return
       try {
-        if (videoRef.current.readyState >= 3) {
+        if (el.readyState >= 3) {
           setIsBuffering(false)
-          await videoRef.current.play()
+          await el.play()
         } else {
           setIsBuffering(true)
-          await new Promise((resolve) => { if (videoRef.current) videoRef.current.oncanplay = resolve as any })
-          if (mounted) { setIsBuffering(false); await videoRef.current.play() }
+          await new Promise((resolve) => { if (el) el.oncanplay = resolve as any })
+          if (mounted) { setIsBuffering(false); await el.play() }
         }
       } catch (error) {
         console.warn('Video playback failed:', error)
@@ -51,14 +56,14 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
     }
 
     if (isInView) handleVideoPlay()
-    else if (videoRef.current) videoRef.current.pause()
+    else if (el) el.pause()
 
     return () => {
       mounted = false
-      if (videoRef.current) {
-        videoRef.current.pause()
-        videoRef.current.removeAttribute('src')
-        videoRef.current.load()
+      if (el) {
+        el.pause()
+        el.removeAttribute('src')
+        el.load()
       }
     }
   }, [isInView])
@@ -89,14 +94,16 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
   }
 
   return (
-    <img
-      src={item.url}
-      alt={item.title}
-      className={`${className} object-cover cursor-pointer`}
-      onClick={onClick}
-      loading="lazy"
-      decoding="async"
-    />
+    <div className={`${className} relative`} onClick={onClick}>
+      <Image
+        src={item.url}
+        alt={item.title}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+        className="object-cover cursor-pointer"
+        priority={false}
+      />
+    </div>
   )
 }
 

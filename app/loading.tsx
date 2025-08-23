@@ -7,8 +7,6 @@ export default function Loading() {
     <div className="flex h-screen items-center justify-center">
       <LottieVisual
         src="https://lottie.host/35ea17b4-cd88-47c7-ae66-81c475622810/oktfIq5bpW.lottie"
-        width={180}
-        height={180}
         autoplay
         loop
       />

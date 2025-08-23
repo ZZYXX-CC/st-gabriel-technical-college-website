@@ -279,8 +279,6 @@ export default function ProgramsPage() {
               { icon: ShoppingBag, title: "School-backed visibility", desc: "Reach customers who trust our platform", visual: (
                 <LottieVisual
                   src="https://lottie.host/1e716099-5349-475e-9c06-a84cf538354e/I3gknEluWE.lottie"
-                  width={380}
-                  height={200}
                   autoplay
                   loop
                   showGrid
@@ -290,13 +288,11 @@ export default function ProgramsPage() {
                 />
               ) },
               { icon: ShieldCheck, title: "Fair, transparent fees", desc: "Student-first policies—keep more of what you earn", visual: (
-                <LottieVisual src="https://lottie.host/9c05b91c-4fac-4a8e-84c5-ca7fe0bb95f5/6mGM11WA8f.lottie" width={380} height={200} autoplay loop />
+                <LottieVisual src="https://lottie.host/9c05b91c-4fac-4a8e-84c5-ca7fe0bb95f5/6mGM11WA8f.lottie" autoplay loop />
               ) },
               { icon: Briefcase, title: "Real clients & projects", desc: "Gain practical experience while you study", visual: (
                 <LottieVisual
                   src="https://lottie.host/f7794f73-b8e5-422d-b93a-9780bfe2102c/RrGKhgBzN1.lottie"
-                  width={380}
-                  height={200}
                   autoplay
                   loop
                 />
@@ -304,8 +300,6 @@ export default function ProgramsPage() {
               { icon: Sparkles, title: "Build your brand", desc: "Grow your portfolio and reputation", visual: (
                 <LottieVisual
                   src="https://lottie.host/54cde0d3-e112-4946-a59d-8dfd0798e0a7/xk5fgxfJrx.lottie"
-                  width={380}
-                  height={200}
                   autoplay
                   loop
                   showGrid
