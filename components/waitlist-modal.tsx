@@ -106,7 +106,16 @@ export default function WaitlistModal({ trigger }: WaitlistModalProps) {
             </div>
             <div className="grid gap-2">
               <label htmlFor="age" className="text-sm font-medium text-stg-gray">Age</label>
-              <Input id="age" type="number" min={12} max={120} value={age} onChange={(e) => setAge(e.target.value)} required placeholder="18" />
+              <Input
+                id="age"
+                type="number"
+                min={12}
+                max={120}
+                value={age}
+                onChange={(e) => setAge(e.target.value === "" ? "" : Number(e.target.value))}
+                required
+                placeholder="18"
+              />
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-4">

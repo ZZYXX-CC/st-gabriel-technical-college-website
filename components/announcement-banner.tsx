@@ -44,23 +44,23 @@ export default function AnnouncementBanner() {
             >
               Admissions are currently closed as we are in setup phase. Launching soon! &nbsp; 
               <span className="inline">
-                Click '
+                Click &lsquo;
                 <WaitlistModal
                   trigger={
                     <button className="underline font-bold text-accent hover:text-accent/90">here</button>
                   }
                 />
-                ' to join waitlist
+                &rsquo; to join waitlist
               </span>
               &nbsp; • &nbsp; Admissions are currently closed as we are in setup phase. Launching soon! &nbsp; 
               <span className="inline">
-                Click '
+                Click &lsquo;
                 <WaitlistModal
                   trigger={
                     <button className="underline font-bold text-accent hover:text-accent/90">here</button>
                   }
                 />
-                ' to join waitlist
+                &rsquo; to join waitlist
               </span>
             </span>
           </p>
