@@ -24,6 +24,7 @@ export default function ContactPage() {
           <p className="text-lg md:text-xl text-gray-200">
             We&apos;re here to help! Reach out to us for any inquiries.
           </p>
+          {/* Waitlist trigger removed; use banner "here" link instead */}
         </div>
       </section>
 
@@ -111,10 +112,6 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3">
                   <Mail className="h-6 w-6 text-stg-sky-blue" />
                   <p className="text-stg-gray">Industry Partnerships: partnerships@stgabrieltech.com</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-6 w-6 text-stg-sky-blue" />
-                  <p className="text-stg-gray">Alumni Network: alumni@stgabrieltech.com</p>
                 </div>
               </CardContent>
             </Card>

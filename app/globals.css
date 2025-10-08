@@ -104,3 +104,35 @@ html {
 .neumorphic-button:hover::after {
   @apply opacity-100;
 }
+
+/* Announcement banner + marquee animation */
+.announcement-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+@keyframes sgt-marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.sgt-marquee {
+  animation: sgt-marquee 40s linear infinite;
+}
+
+/* Pause marquee when user hovers or focuses within banner */
+.announcement-banner:hover .sgt-marquee,
+.announcement-banner:focus-within .sgt-marquee,
+.sgt-marquee.paused {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .sgt-marquee {
+    animation: none;
+  }
+}

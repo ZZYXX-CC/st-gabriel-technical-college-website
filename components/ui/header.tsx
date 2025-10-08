@@ -87,7 +87,7 @@ function Header(props: any) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     return (
-        <header className="w-full z-40 fixed top-6 left-0 px-6 md:px-8 transition-all duration-300">
+        <header className="w-full z-40 fixed top-[var(--banner-height,1.5rem)] left-0 px-6 md:px-8 transition-all duration-300">
             <div className={`mx-auto max-w-6xl rounded-2xl transition-all duration-300 ${
                 isScrolled 
                     ? 'bg-white/30 backdrop-blur-xl shadow-2xl border border-white/40' 

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { Montserrat } from "next/font/google"
 import Header from "@/components/ui/header";
+import AnnouncementBanner from "@/components/announcement-banner";
 import { Footer } from "@/components/footer"
 
 const montserrat = Montserrat({ subsets: ["latin"] })
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <div className="flex flex-col min-h-screen">
+          <AnnouncementBanner />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
