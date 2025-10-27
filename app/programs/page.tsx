@@ -109,6 +109,19 @@ const programsData = [
     ],
   },
   {
+    category: "Health and Safety Programs",
+    icon: ShieldCheck,
+    programs: [
+      {
+        title: "Health and Safety Education (HSE)",
+        description:
+          "Essential workplace health and safety standards, risk assessment, and compliance training.",
+        image: "/asset/hero-programs.jpg",
+        icon: ShieldCheck,
+      },
+    ],
+  },
+  {
     category: "Digital Technology Programs",
     icon: Code,
     programs: [
@@ -138,6 +151,13 @@ const programsData = [
         description: "Teaches students to collect, analyze, and interpret data for business decision-making.",
         image: "/asset/data-analytics.png",
         icon: BarChart,
+      },
+      {
+        title: "Web Development",
+        description:
+          "Learn modern web design and development with HTML, CSS, JavaScript, and frameworks.",
+        image: "/asset/web-design-SGT.jpg",
+        icon: Laptop,
       },
     ],
   },
