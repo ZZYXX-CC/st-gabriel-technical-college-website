@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, PlayCircle, Shield, Zap, Wrench, Video, Messa
 const highlights = [
   { label: "Specialized Programs", value: "20+" },
   { label: "Employment Rate", value: "95%" },
-  { label: "Successful Alumni", value: "5K+" },
+  { label: "Career-Ready Training", value: "Project-Based" },
   { label: "Hands-on Lab", value: "100%" },
 ]
 
@@ -63,38 +63,63 @@ const news = [
 export default function HomePage() {
   return (
     <div className="bg-white text-[#1f2937]">
-      <section className="px-6 pt-36 pb-20">
-        <div className="mx-auto max-w-6xl text-center">
-          <p className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-[#d6e9f6] px-4 py-2 text-xs font-bold text-[#4a94c4]">
-            ADMISSIONS OPEN FOR FALL 2026
-          </p>
-          <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl">
-            Empowering the Next Generation of <br />
-            <span className="text-[#4a94c4]">Technical Leaders</span>
-          </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-[#626161]">
-            Join a future-ready technical community. We provide the tools, expertise, and environment for you to master
-            high-demand technical skills.
-          </p>
-          <div className="mb-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/about" className="rounded-2xl bg-[#4a94c4] px-7 py-3 font-semibold text-white">
-              Explore Our Mission
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 rounded-2xl border border-[#d1d5db] bg-white px-7 py-3 font-semibold text-[#626161]"
-            >
-              <PlayCircle className="h-5 w-5" /> Watch Overview
-            </Link>
+      <section className="px-6 pb-20 pt-32 md:pt-36">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+          <div>
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#d6e9f6] px-4 py-2 text-xs font-bold text-[#4a94c4]">
+              ADMISSIONS OPEN FOR FALL 2026
+            </p>
+            <h1 className="mb-5 text-4xl font-extrabold leading-tight md:text-6xl">
+              Empowering the Next Generation of <span className="text-[#4a94c4]">Technical Leaders</span>
+            </h1>
+            <p className="mb-8 max-w-xl text-lg text-[#626161]">
+              Join a future-ready technical community. We provide the tools, expertise, and environment for you to master
+              high-demand technical skills in Nigeria and beyond.
+            </p>
+
+            <div className="mb-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/admissions" className="rounded-2xl bg-[#4a94c4] px-7 py-3 text-center font-semibold text-white">
+                Apply for Admission
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#d1d5db] bg-white px-7 py-3 font-semibold text-[#626161]"
+              >
+                <PlayCircle className="h-5 w-5" /> Explore Our Mission
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 rounded-3xl border border-[#e5e7eb] bg-[#f9fafb] p-5 sm:grid-cols-4">
+              {highlights.map((item) => (
+                <div key={item.label}>
+                  <p className="text-2xl font-extrabold text-[#4a94c4] md:text-3xl">{item.value}</p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-wide text-[#626161]">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-5 rounded-[2rem] border border-[#e5e7eb] bg-[#f9fafb] p-8 md:grid-cols-4">
-            {highlights.map((item) => (
-              <div key={item.label}>
-                <p className="text-3xl font-extrabold text-[#4a94c4]">{item.value}</p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-[#626161]">{item.label}</p>
+          <div className="relative overflow-hidden rounded-[2rem] border border-[#e5e7eb] bg-[#f8fbff] p-4 md:p-6">
+            <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-[#ffd400]/30" />
+            <div className="absolute -bottom-16 -left-14 h-44 w-44 rounded-full bg-[#4a94c4]/20" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/70 bg-white/80 p-3 shadow-sm">
+              <Image
+                src="/asset/hero-t.png"
+                alt="African students in modern technical learning environment"
+                width={900}
+                height={700}
+                className="h-auto w-full rounded-xl object-cover"
+                priority
+              />
+            </div>
+            <div className="relative mt-4 grid grid-cols-2 gap-3">
+              <div className="rounded-xl border border-white/70 bg-white/85 p-3 text-xs font-semibold text-[#626161]">
+                ✓ Industry-Relevant Curriculum
               </div>
-            ))}
+              <div className="rounded-xl border border-white/70 bg-white/85 p-3 text-xs font-semibold text-[#626161]">
+                ✓ Hands-on Labs & Workshops
+              </div>
+            </div>
           </div>
         </div>
       </section>
