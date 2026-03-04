@@ -146,7 +146,7 @@ export default function AdmissionsPage() {
             <div className="flex flex-wrap items-center gap-5">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-orange-500 to-orange-400 text-white hover:opacity-95">
+                  <Button className="bg-gradient-to-r from-[#4a94c4] to-[#626161] text-white hover:opacity-95">
                     Start Application <Rocket className="ml-2 h-4 w-4" />
                   </Button>
                 </DialogTrigger>
