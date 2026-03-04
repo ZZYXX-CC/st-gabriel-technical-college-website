@@ -5,19 +5,19 @@ import { ArrowDown, Lightbulb, ShieldCheck, Hammer, Rocket, Target, Eye } from "
 
 const timeline = [
   {
-    year: "1995",
-    title: "Founding Vision",
-    body: "St. Gabriel started with one workshop and ten students, focused on practical technical training for real jobs.",
-  },
-  {
-    year: "2010",
-    title: "Technical Expansion",
-    body: "We launched digital labs for computer science and mechatronics, doubling campus capacity.",
+    year: "2026",
+    title: "School Launch",
+    body: "St. Gabriel Technical School launches with a clear focus on practical, industry-aligned technical education.",
   },
   {
     year: "2026",
-    title: "Innovation Era",
-    body: "Today we combine industry partnerships, modern infrastructure, and future-ready training pathways.",
+    title: "Program Rollout",
+    body: "Core tracks in technology, engineering, and applied skills are rolled out in phases with lab-first learning.",
+  },
+  {
+    year: "Next",
+    title: "Growth Roadmap",
+    body: "Partnerships, facilities, and student services continue expanding as the school scales responsibly.",
   },
 ]
 
@@ -57,12 +57,12 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/20" />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
-          <Badge className="mb-6 bg-stg-yellow text-stone-900">Established 1995</Badge>
+          <Badge className="mb-6 bg-stg-yellow text-stone-900">New School · Founded 2026</Badge>
           <h1 className="max-w-4xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
-            Redefining Excellence in <span className="text-stg-yellow">Vocational Education</span>
+            Building a New Standard in <span className="text-stg-yellow">Technical Education</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-slate-200 md:text-xl">
-            We empower technical leaders with practical skills, strong values, and direct pathways into industry.
+            As a new school, we are focused on practical training, disciplined instruction, and industry-relevant learning pathways.
           </p>
           <Button className="mt-8 bg-stg-yellow text-stone-900 hover:bg-stg-yellow/90" asChild>
             <a href="#history">Our Story <ArrowDown className="ml-2 h-4 w-4" /></a>
@@ -96,7 +96,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/20 bg-white/85 p-5 backdrop-blur dark:bg-black/60">
               <p className="italic text-slate-700 dark:text-slate-100">
-                "Tradition meets technology. We do not just teach trades; we engineer futures."
+                "Our focus is simple: practical skills, modern tools, and consistent student support."
               </p>
             </div>
           </div>
