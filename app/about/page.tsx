@@ -1,334 +1,149 @@
-"use client"
-
 import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Lightbulb, Handshake, TrendingUp, Users, GraduationCap, Wrench, Quote, Target, BookOpen, Award } from "lucide-react"
-import LottieVisual from "@/components/ui/lottie-visual"
-import InteractiveBentoGallery from "@/components/ui/interactive-bento-gallery"
+import { Button } from "@/components/ui/button"
+import { ArrowDown, Lightbulb, ShieldCheck, Hammer, Rocket, Target, Eye } from "lucide-react"
 
-export default function AboutUsPage() {
+const timeline = [
+  {
+    year: "1995",
+    title: "Founding Vision",
+    body: "St. Gabriel started with one workshop and ten students, focused on practical technical training for real jobs.",
+  },
+  {
+    year: "2010",
+    title: "Technical Expansion",
+    body: "We launched digital labs for computer science and mechatronics, doubling campus capacity.",
+  },
+  {
+    year: "2024",
+    title: "Innovation Era",
+    body: "Today we combine industry partnerships, modern infrastructure, and future-ready training pathways.",
+  },
+]
+
+const values = [
+  {
+    title: "Innovation",
+    body: "We continually update tools, methods, and curriculum to stay industry-relevant.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Integrity",
+    body: "We hold high ethical standards in teaching, assessment, and leadership.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Hands-on Learning",
+    body: "Our programs prioritize practical application so students build confidence by doing.",
+    icon: Hammer,
+  },
+  {
+    title: "Future-Ready",
+    body: "Students graduate prepared for today’s opportunities and tomorrow’s technology shifts.",
+    icon: Rocket,
+  },
+]
+
+export default function AboutPage() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section for About Us */}
-      <section className="relative w-full h-[500px] md:h-[600px] flex items-center justify-center text-center overflow-hidden pt-16 md:pt-24">
-        {/* Solid background color or subtle overlay if desired */}
-        <div className="absolute inset-0 bg-stg-sky-blue" />
-        {/* Replace with your actual image path */}
+    <div className="bg-background text-foreground">
+      <section className="relative min-h-[72vh] pt-32 pb-20 md:pt-40 md:pb-24 flex items-center overflow-hidden">
         <Image
           src="/front-w.jpg"
-          alt="St. Gabriel Technical Institute Front"
+          alt="St. Gabriel campus"
           fill
-          className="object-cover opacity-40"
           priority
+          className="object-cover"
         />
-        <div className="relative z-10 px-4 md:px-6 max-w-4xl space-y-6">
-          <Badge className="mb-4 bg-stg-yellow text-stg-gray border-stg-yellow hover:bg-stg-yellow/90 transition-all duration-300">
-            Excellence in Technical Education
-          </Badge>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            <span className="text-stg-yellow">About St. Gabriel</span>
-            <br />
-            <span className="text-white">Technical Institute</span>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/20" />
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+          <Badge className="mb-6 bg-stg-yellow text-stone-900">Established 1995</Badge>
+          <h1 className="max-w-4xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
+            Redefining Excellence in <span className="text-stg-yellow">Vocational Education</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-            Discover our journey, mission, and commitment to transforming lives through quality technical education
+          <p className="mt-6 max-w-2xl text-base text-slate-200 md:text-xl">
+            We empower technical leaders with practical skills, strong values, and direct pathways into industry.
           </p>
+          <Button className="mt-8 bg-stg-yellow text-stone-900 hover:bg-stg-yellow/90" asChild>
+            <a href="#history">Our Story <ArrowDown className="ml-2 h-4 w-4" /></a>
+          </Button>
         </div>
       </section>
 
-      {/* Mission, Vision, Values Section */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        {/* Premium gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-stg-sky-blue/5" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(74,148,196,0.05),transparent_50%)]" />
-        
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <Badge className="mb-6 bg-stg-sky-blue/10 text-stg-sky-blue border-stg-sky-blue/20 hover:bg-stg-sky-blue/20 transition-all duration-300">
-              Our Foundation
-            </Badge>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-stg-yellow">Mission, Vision & Values</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-stg-gray max-w-4xl mx-auto leading-relaxed">
-              The principles that guide our commitment to excellence in technical education
-            </p>
+      <section id="history" className="py-20 md:py-24">
+        <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-2">
+          <div>
+            <h2 className="text-3xl font-bold md:text-4xl">Our Journey</h2>
+            <div className="mt-10 space-y-8 border-l border-stg-sky-blue/30 pl-7">
+              {timeline.map((item) => (
+                <div key={item.year} className="relative">
+                  <span className="absolute -left-[34px] top-1 h-3 w-3 rounded-full bg-stg-yellow" />
+                  <p className="text-sm font-semibold text-stg-sky-blue">{item.year}</p>
+                  <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Mission Card */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-stg-sky-blue/5 to-stg-sky-blue/10 rounded-3xl transform group-hover:scale-105 transition-all duration-300" />
-              <div className="relative p-8 md:p-10 space-y-6 text-center lg:text-left">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">Our Mission</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  At St. Gabriel Technical Institute, our mission centers on empowering individuals with practical skills
-                  and knowledge that enable them to thrive in their chosen careers while contributing meaningfully to
-                  society. We remain committed to delivering high-quality technical education that is accessible,
-                  affordable, and directly relevant to the needs of our community and the broader economy.
-                </p>
-              </div>
-            </div>
-            
-            {/* Vision Card */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-stg-yellow/5 to-stg-yellow/10 rounded-3xl transform group-hover:scale-105 transition-all duration-300" />
-              <div className="relative p-8 md:p-10 space-y-6 text-center lg:text-left">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6">
-                  <BookOpen className="w-8 h-8 text-stg-gray" />
-                </div>
-                
-                <h3 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">Our Vision</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  We aspire to become a leading center of excellence in technical education, renowned for our commitment
-                  to innovation, industry relevance, and student success. Our vision encompasses creating a vibrant
-                  learning community where individuals from diverse backgrounds can realize their full potential and make
-                  positive impacts in their professions and communities.
-                </p>
-              </div>
-            </div>
-            
-            {/* Values Card */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-stg-gray/5 to-stg-gray/10 rounded-3xl transform group-hover:scale-105 transition-all duration-300" />
-              <div className="relative p-8 md:p-10 space-y-6 text-center lg:text-left">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                
-                <h3 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">Core Values</h3>
-                <ul className="space-y-4 text-lg text-gray-700 leading-relaxed list-none p-0">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-stg-sky-blue mt-1 flex-shrink-0" />
-                    <span><strong>Excellence:</strong> We strive for the highest standards in all aspects of our educational programs and services.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-stg-sky-blue mt-1 flex-shrink-0" />
-                    <span><strong>Innovation:</strong> We embrace new technologies and teaching methods to enhance learning outcomes.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-stg-sky-blue mt-1 flex-shrink-0" />
-                    <span><strong>Integrity:</strong> We maintain the highest ethical standards in all our interactions and decisions.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-stg-sky-blue mt-1 flex-shrink-0" />
-                    <span><strong>Inclusivity:</strong> We welcome and support students from all backgrounds and circumstances.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-stg-sky-blue mt-1 flex-shrink-0" />
-                    <span><strong>Community:</strong> We foster strong connections between students, faculty, and industry partners.</span>
-                  </li>
-                </ul>
-              </div>
+
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-xl">
+            <Image
+              src="https://images.unsplash.com/photo-1581091215367-59ab6dcef6c1?q=80&w=1200&auto=format&fit=crop"
+              alt="Students training in the lab"
+              width={1200}
+              height={1400}
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/20 bg-white/85 p-5 backdrop-blur dark:bg-black/60">
+              <p className="italic text-slate-700 dark:text-slate-100">
+                "Tradition meets technology. We do not just teach trades; we engineer futures."
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Unique Advantages Section */}
-      <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-br from-white via-slate-50/50 to-stg-sky-blue/5">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-stg-yellow/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-stg-sky-blue/10 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <Badge className="mb-6 bg-stg-yellow/10 text-stg-yellow border-stg-yellow/20 hover:bg-stg-yellow/20 transition-all duration-300">
-              Our Advantages
-            </Badge>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-stg-sky-blue">What Sets Us Apart</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-stg-gray max-w-4xl mx-auto leading-relaxed">
-              Discover the unique advantages that make St. Gabriel Technical Institute your best choice for technical education
+      <section id="mission" className="bg-slate-50 py-20 dark:bg-slate-900/40 md:py-24">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
+          <article className="rounded-3xl border border-stg-yellow/20 bg-white p-8 shadow-sm dark:bg-slate-900">
+            <Target className="h-10 w-10 text-stg-yellow" />
+            <h3 className="mt-5 text-2xl font-bold">Our Mission</h3>
+            <p className="mt-3 text-muted-foreground">
+              To bridge education and industry through accessible, hands-on technical training that builds confidence,
+              competence, and career readiness.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Industry-Relevant Curriculum */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-sky-blue/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mb-6">
-                  <Lightbulb className="w-8 h-8 text-white" />
-                </div>
-                <LottieVisual
-                  src="https://lottie.host/d2a0d5f5-6a3b-4d3a-bd4b-baf4f5c3d2f1/edu-curriculum.lottie"
-                  autoplay
-                  loop
-                  showGrid
-                  gridColor="rgba(147,183,190,0.18)"
-                  showBlur
-                  blurColor="rgba(139,92,246,0.22)"
-                />
-                <h3 className="text-2xl font-bold text-stg-gray mb-4">Industry-Relevant Curriculum</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Developed in collaboration with industry experts, ensuring our training programs align with current
-                  market needs and technological advancements.
-                </p>
-              </div>
-            </div>
-            {/* Experienced Faculty */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-yellow/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mb-6">
-                  <GraduationCap className="w-8 h-8 text-stg-gray" />
-                </div>
-                <LottieVisual
-                  src="https://lottie.host/3a7d7f9f-1c0a-4d0b-9e3e-6e9a4e5a9c21/teacher-faculty.lottie"
-                  autoplay
-                  loop
-                  showGrid
-                  gridColor="rgba(147,183,190,0.18)"
-                  showBlur
-                  blurColor="rgba(139,92,246,0.22)"
-                />
-                <h3 className="text-2xl font-bold text-stg-gray mb-4">Experienced Faculty</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Brings real-world expertise and insights into every classroom, combining extensive industry experience
-                  with educational excellence.
-                </p>
-              </div>
-            </div>
-            {/* State-of-the-Art Facilities */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-gray/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mb-6">
-                  <Wrench className="w-8 h-8 text-white" />
-                </div>
-                <LottieVisual
-                  src="https://lottie.host/8b2a1e6c-0a54-4b4a-91f5-0b0f6f2b3c77/facilities-tools.lottie"
-                  autoplay
-                  loop
-                  showGrid
-                  gridColor="rgba(147,183,190,0.18)"
-                  showBlur
-                  blurColor="rgba(139,92,246,0.22)"
-                />
-                <h3 className="text-2xl font-bold text-stg-gray mb-4">State-of-the-Art Facilities</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Feature modern equipment and cutting-edge technology, providing students with hands-on experience
-                  using industry-standard tools.
-                </p>
-              </div>
-            </div>
-            
-            {/* Comprehensive Support Services */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-sky-blue/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-sky-blue to-stg-sky-blue/80 rounded-2xl flex items-center justify-center mb-6">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <LottieVisual
-                  src="https://lottie.host/6f3f2e10-7c5b-49c9-a3e4-d0bfe7a6a9a1/support-services.lottie"
-                  autoplay
-                  loop
-                  showGrid
-                  gridColor="rgba(147,183,190,0.18)"
-                  showBlur
-                  blurColor="rgba(139,92,246,0.22)"
-                />
-                <h3 className="text-2xl font-bold text-stg-gray mb-4">Comprehensive Support Services</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Include academic counseling, career guidance, and financial assistance, providing personalized
-                  attention to help each student succeed.
-                </p>
-              </div>
-            </div>
-            
-            {/* Strong Industry Partnerships */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-yellow/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-yellow to-stg-yellow/80 rounded-2xl flex items-center justify-center mb-6">
-                  <Handshake className="w-8 h-8 text-stg-gray" />
-                </div>
-                <LottieVisual
-                  src="https://lottie.host/1f9f2c34-2b5a-4d7e-9b8a-0f2d6c7b8e92/handshake-partnership.lottie"
-                  autoplay
-                  loop
-                  showGrid
-                  gridColor="rgba(147,183,190,0.18)"
-                  showBlur
-                  blurColor="rgba(139,92,246,0.22)"
-                />
-                <h3 className="text-2xl font-bold text-stg-gray mb-4">Strong Industry Partnerships</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  With leading companies and organizations provide students with internship opportunities, industry
-                  projects, and networking events.
-                </p>
-              </div>
-            </div>
-            
-            {/* Job Placement Assistance */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-stg-gray/5 rounded-3xl shadow-lg group-hover:shadow-2xl transition-all duration-300" />
-              <div className="relative p-8 space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-stg-gray to-stg-gray/80 rounded-2xl flex items-center justify-center mb-6">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <LottieVisual
-                  src="https://lottie.host/7e2d1a45-9b6f-4a9e-8d2f-3c4b5a6d7e8f/job-placement.lottie"
-                  autoplay
-                  loop
-                  showGrid
-                  gridColor="rgba(147,183,190,0.18)"
-                  showBlur
-                  blurColor="rgba(139,92,246,0.22)"
-                />
-                <h3 className="text-2xl font-bold text-stg-gray mb-4">Job Placement Assistance</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Includes resume building, interview preparation, and direct connections with potential employers,
-                  actively connecting graduates with employment.
-                </p>
-              </div>
-            </div>
-          </div>
+          </article>
+          <article className="rounded-3xl border border-stg-sky-blue/30 bg-white p-8 shadow-sm dark:bg-slate-900">
+            <Eye className="h-10 w-10 text-stg-sky-blue" />
+            <h3 className="mt-5 text-2xl font-bold">Our Vision</h3>
+            <p className="mt-3 text-muted-foreground">
+              To be a leading benchmark for vocational excellence where innovation, integrity, and inclusive growth create
+              lasting impact.
+            </p>
+          </article>
         </div>
       </section>
 
-      {/* Gallery Section replacing Student Success Stories */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-stg-gray/5 via-white to-stg-yellow/5" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,193,7,0.05),transparent_50%)]" />
-
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <Badge className="mb-6 bg-stg-gray/10 text-stg-gray border-stg-gray/20 hover:bg-stg-gray/20 transition-all duration-300">
-              Campus Gallery
-            </Badge>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-stg-gray">
-              Life at St. Gabriel
-            </h2>
-            <p className="text-xl md:text-2xl text-stg-gray max-w-4xl mx-auto leading-relaxed">
-              Drag and explore our curated gallery of campus life, labs, and events.
+      <section className="py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">The Values We Live By</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+              Foundational principles that shape every lecture, lab, and student interaction.
             </p>
           </div>
-
-          <InteractiveBentoGallery
-            title=""
-            description=""
-            mediaItems={[
-              { id: 1, type: 'image', title: 'Campus Aerial', desc: 'A welcoming view of our campus', url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2' },
-              { id: 2, type: 'video', title: 'Hands-on Workshop', desc: 'Students collaborate on projects', url: 'https://cdn.pixabay.com/video/2024/07/24/222837_large.mp4', span: 'md:col-span-2 md:row-span-2 col-span-1 sm:col-span-2 sm:row-span-2' },
-              { id: 3, type: 'image', title: 'Modern Lab', desc: 'State-of-the-art equipment', url: 'https://images.unsplash.com/photo-1581093588401-16f8b8f3d38f?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-1 md:row-span-3 sm:col-span-2 sm:row-span-2' },
-              { id: 4, type: 'image', title: 'Library Study', desc: 'Quiet spaces to focus', url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2' },
-              { id: 5, type: 'video', title: 'Campus Walkthrough', desc: 'A day in student life', url: 'https://cdn.pixabay.com/video/2020/07/30/46026-447087782_large.mp4', span: 'md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2' },
-              { id: 6, type: 'image', title: 'Team Project', desc: 'Collaborative learning', url: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2' },
-              { id: 7, type: 'image', title: 'Graduation Day', desc: 'Celebrating achievements', url: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&auto=format&fit=crop&w=1600', span: 'md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2' },
-            ]}
-          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map(({ title, body, icon: Icon }) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-stg-yellow/60 hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
+              >
+                <Icon className="h-8 w-8 text-stg-yellow" />
+                <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </div>

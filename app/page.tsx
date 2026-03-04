@@ -176,7 +176,7 @@ export default function HomePage() {
               <h2 className="text-3xl font-extrabold">Latest Tech News</h2>
               <p className="mt-2 text-[#626161]">Updates from the St. Gabriel technical community.</p>
             </div>
-            <Link href="/news-events" className="inline-flex items-center gap-1 font-semibold text-[#4a94c4]">
+            <Link href="/news" className="inline-flex items-center gap-1 font-semibold text-[#4a94c4]">
               View All Articles <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
