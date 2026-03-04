@@ -15,7 +15,7 @@ const timeline = [
     body: "We launched digital labs for computer science and mechatronics, doubling campus capacity.",
   },
   {
-    year: "2024",
+    year: "2026",
     title: "Innovation Era",
     body: "Today we combine industry partnerships, modern infrastructure, and future-ready training pathways.",
   },

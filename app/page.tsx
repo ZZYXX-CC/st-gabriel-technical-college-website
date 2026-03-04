@@ -39,21 +39,21 @@ const courses = [
 const news = [
   {
     tag: "EVENT",
-    date: "MAY 15, 2024",
+    date: "MAY 15, 2026",
     title: "Annual Robotics Club Competition Winners Announced",
-    body: "Our students showcased incredible innovation at the 2024 robotics showcase, featuring AI-driven automation.",
+    body: "Our students showcased incredible innovation at the 2026 robotics showcase, featuring AI-driven automation.",
     image: "/asset/hero.jpg",
   },
   {
     tag: "FACILITY",
-    date: "APRIL 20, 2024",
+    date: "APRIL 20, 2026",
     title: "New HVAC Systems Lab Opens for Smart Energy Training",
     body: "A state-of-the-art facility designed to provide hands-on experience with modern climate control systems.",
     image: "/asset/hvac.png",
   },
   {
     tag: "CAREER",
-    date: "MARCH 12, 2024",
+    date: "MARCH 12, 2026",
     title: "Connecting Students with Global Tech Giants",
     body: "Last month&apos;s career fair saw record-breaking attendance from leading engineering and tech firms.",
     image: "/asset/hero-programs.jpg",
@@ -66,7 +66,7 @@ export default function HomePage() {
       <section className="px-6 pt-36 pb-20">
         <div className="mx-auto max-w-6xl text-center">
           <p className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-[#d6e9f6] px-4 py-2 text-xs font-bold text-[#4a94c4]">
-            ADMISSIONS OPEN FOR FALL 2024
+            ADMISSIONS OPEN FOR FALL 2026
           </p>
           <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl">
             Empowering the Next Generation of <br />
