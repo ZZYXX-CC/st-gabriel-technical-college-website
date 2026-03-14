@@ -1,497 +1,247 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import {
-  FileText,
-  Users,
-  Calendar,
-  CheckCircle,
-  Clock,
-  GraduationCap,
-  BookOpen,
-  UserCheck,
-  AlertCircle,
+  ArrowRight,
+  CheckCircle2,
+  ClipboardCheck,
   Download,
-  Globe,
-  MapPin,
+  FileCheck2,
+  FileText,
+  Info,
+  Layers,
+  Rocket,
+  School,
+  Timer,
 } from "lucide-react"
-import { ApplicationForm } from "@/components/application-form";
+import { ApplicationForm } from "@/components/application-form"
 
-const programRequirements = [
+const timeline = [
+  { title: "Application", status: "Open now", icon: FileText, active: true },
+  { title: "Entrance Exam", status: "Coming soon", icon: ClipboardCheck },
+  { title: "Interview", status: "To be scheduled", icon: School },
+  { title: "Enrollment", status: "Final step", icon: CheckCircle2 },
+]
+
+const tracks = [
   {
-    category: "Technical and Engineering Programs",
-    programs: [
-      "AutoCare Technology",
-      "Electrical Installation and Maintenance",
-      "Plumbing and Pipeline Services",
-      "HVAC Systems Technology",
-      "Welding and Fabrication",
-      "Carpentry and Joinery",
-    ],
-    requirements: {
-      age: "16-35 years",
-      education: "SSCE/WAEC with at least 3 credits including Mathematics and English",
-      entrance: "Basic technical aptitude test",
-      duration: "6-12 months",
-    },
+    title: "Engineering & Robotics",
+    duration: "3 Years Program",
+    description: "Master mechanical design, PLC programming, and industrial automation systems.",
   },
   {
-    category: "Digital Technology Programs",
-    programs: [
-      "Cybersecurity Fundamentals",
-      "Computer System Repairs and Maintenance",
-      "Digital Marketing Strategies",
-      "Data Analytics and Business Intelligence",
-    ],
-    requirements: {
-      age: "16-40 years",
-      education: "SSCE/WAEC with at least 3 credits including Mathematics and English",
-      entrance: "Computer literacy assessment and logical reasoning test",
-      duration: "4-8 months",
-    },
+    title: "Information Technology",
+    duration: "3 Years Program",
+    description: "Build skills in software architecture, cybersecurity, and cloud infrastructure.",
   },
   {
-    category: "Creative and Hospitality Programs",
-    programs: [
-      "Fashion Design and Tailoring",
-      "Catering and Hospitality Management",
-      "Photography and Visual Arts",
-      "Videography and Media Production",
-    ],
-    requirements: {
-      age: "16-45 years",
-      education: "SSCE/WAEC with at least 2 credits including English",
-      entrance: "Portfolio review and creative assessment",
-      duration: "6-10 months",
-    },
-  },
-  {
-    category: "Construction and Building Programs",
-    programs: ["Masonry and Stonework", "Painting and Decoration", "Tiling and Floor Installation"],
-    requirements: {
-      age: "18-40 years",
-      education: "SSCE/WAEC with at least 2 credits or equivalent trade experience",
-      entrance: "Practical skills assessment",
-      duration: "4-8 months",
-    },
-  },
-  {
-    category: "Emerging Technologies",
-    programs: ["Renewable Energy Systems", "Animal Husbandry and Agricultural Technology"],
-    requirements: {
-      age: "18-45 years",
-      education: "SSCE/WAEC with at least 3 credits including Mathematics and English or relevant experience",
-      entrance: "Technical aptitude and interest assessment",
-      duration: "6-12 months",
-    },
+    title: "Renewable Energy",
+    duration: "2 Years Program",
+    description: "Train in solar technology, sustainable systems, and smart-grid operations.",
   },
 ]
 
-const applicationSteps = [
+const requirements = [
   {
-    step: 1,
-    title: "Choose Your Program",
-    description:
-      "Browse our comprehensive program offerings and select the technical field that aligns with your career goals.",
-    icon: BookOpen,
+    title: "SSCE / WAEC Result",
+    detail: "Certified copy with at least 5 credits including Mathematics and English.",
+    done: true,
   },
   {
-    step: 2,
-    title: "Check Requirements",
-    description:
-      "Review the specific admission requirements for your chosen program, including age criteria and academic qualifications.",
-    icon: CheckCircle,
+    title: "Birth Certificate",
+    detail: "Government-issued document or affidavit.",
   },
   {
-    step: 3,
-    title: "Submit Application",
-    description:
-      "Complete your application online through our portal or visit our campus to apply in person with required documents.",
-    icon: FileText,
+    title: "Passport Photographs",
+    detail: "4 recent white-background photographs.",
   },
   {
-    step: 4,
-    title: "Take Entrance Assessment",
-    description: "Participate in the program-specific entrance examination or skills assessment as required.",
-    icon: UserCheck,
-  },
-  {
-    step: 5,
-    title: "Interview & Counseling",
-    description: "Attend a personal interview and receive academic counseling to ensure program suitability.",
-    icon: Users,
-  },
-  {
-    step: 6,
-    title: "Enrollment Confirmation",
-    description:
-      "Receive admission decision and complete enrollment process including fee payment and orientation scheduling.",
-    icon: GraduationCap,
+    title: "Medical Fitness Report",
+    detail: "From a recognized government hospital.",
   },
 ]
 
 export default function AdmissionsPage() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center text-center overflow-hidden bg-stg-sky-blue animate-fade-in">
-        <Image
-          src="/front-w.jpg"
-          alt="St. Gabriel Technical Institute Front"
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        <div className="relative z-10 px-4 md:px-6 max-w-4xl space-y-6 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">
-            Join St. Gabriel Technical School
-          </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-            Start your journey toward a rewarding technical career. Learn about our admission process and requirements.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              className="bg-stg-yellow text-stg-gray hover:bg-stg-yellow/90 px-8 py-3 text-lg font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105"
-            >
-              <Link href="#application-process">Application Process</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-stg-sky-blue px-8 py-3 text-lg font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105"
-            >
-              <Link href="#requirements">View Requirements</Link>
-            </Button>
-          </div>
+    <div className="relative overflow-hidden bg-slate-950 text-slate-100">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(74,148,196,0.12)_1px,transparent_0)] [background-size:32px_32px]" />
+      <div className="pointer-events-none absolute -right-28 top-10 h-72 w-72 rounded-full bg-stg-sky-blue/20 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 bottom-16 h-64 w-64 rounded-full bg-stg-yellow/20 blur-3xl" />
+
+      <section className="relative mx-auto max-w-6xl px-4 pb-12 pt-24 sm:px-6 md:pt-28">
+        <Badge className="mb-4 border-stg-sky-blue/30 bg-stg-sky-blue/10 text-stg-sky-blue hover:bg-stg-sky-blue/20">
+          Admissions 2026 / 2027
+        </Badge>
+        <h1 className="max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
+          Shape the future with <span className="text-stg-yellow">hands-on technical training</span>.
+        </h1>
+        <p className="mt-4 max-w-2xl text-sm text-slate-300 sm:text-base">
+          Join St. Gabriel Technical College and start your pathway into engineering, IT, and modern vocational careers.
+          Our admission process is clear, guided, and student-friendly.
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="bg-stg-yellow text-stg-gray hover:bg-stg-yellow/90">
+                Start Application <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle>St. Gabriel Application Form</DialogTitle>
+              </DialogHeader>
+              <ApplicationForm />
+            </DialogContent>
+          </Dialog>
+
+          <Button asChild variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10">
+            <Link href="#requirements">Check Requirements</Link>
+          </Button>
+        </div>
+
+        <div className="mt-10 grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm md:grid-cols-4">
+          {timeline.map((item, index) => (
+            <div key={item.title} className="flex items-start gap-3">
+              <div
+                className={`mt-1 rounded-full p-2 ${item.active ? "bg-stg-sky-blue text-white" : "bg-slate-800 text-slate-400"}`}
+              >
+                <item.icon className="h-4 w-4" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold">{index + 1}. {item.title}</p>
+                <p className={`text-xs ${item.active ? "text-stg-sky-blue" : "text-slate-400"}`}>{item.status}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Application Process Section */}
-      <section id="application-process" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-stg-gray mb-4">Application Process</h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Applying to St. Gabriel Technical School is straightforward and accessible. Follow our step-by-step
-              process to begin your technical education journey.
-            </p>
-          </div>
+      <section className="relative mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="space-y-8 lg:col-span-8">
+            <div>
+              <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold">
+                <Layers className="h-5 w-5 text-stg-sky-blue" /> Choose Your Track
+              </h2>
+              <div className="grid gap-4 md:grid-cols-3">
+                {tracks.map((track) => (
+                  <Card key={track.title} className="border-white/10 bg-white/5 text-slate-100">
+                    <CardHeader>
+                      <CardTitle className="text-lg">{track.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-slate-300">{track.description}</p>
+                      <p className="mt-4 flex items-center gap-2 text-xs font-semibold text-stg-yellow">
+                        <Timer className="h-3.5 w-3.5" /> {track.duration}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
 
-          {/* Application Methods */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <Card className="bg-white shadow-lg rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-xl">
-              <CardHeader className="text-center">
-                <Globe className="h-16 w-16 text-stg-sky-blue mx-auto mb-4" />
-                <CardTitle className="text-2xl font-bold text-stg-gray">Apply Online</CardTitle>
-                <CardDescription className="text-gray-600">
-                  Complete your application from anywhere, anytime
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-sky-blue" />
-                    24/7 access to application portal
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-sky-blue" />
-                    Upload documents digitally
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-sky-blue" />
-                    Track application status online
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-sky-blue" />
-                    Instant confirmation receipt
-                  </li>
-                </ul>
-                <Dialog>
-  <DialogTrigger asChild>
-    <Button className="w-full bg-stg-sky-blue text-white hover:bg-stg-sky-blue/90">Apply Online Now</Button>
-  </DialogTrigger>
-  <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-    <DialogHeader>
-      <DialogTitle>Application Form</DialogTitle>
-    </DialogHeader>
-    <ApplicationForm />
-  </DialogContent>
-</Dialog>
-              </CardContent>
-            </Card>
+            <div className="flex flex-wrap items-center gap-5">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="bg-gradient-to-r from-[#4a94c4] to-[#626161] text-white hover:opacity-95">
+                    Start Application <Rocket className="ml-2 h-4 w-4" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-3xl">
+                  <DialogHeader>
+                    <DialogTitle>Admissions Application</DialogTitle>
+                  </DialogHeader>
+                  <ApplicationForm />
+                </DialogContent>
+              </Dialog>
 
-            <Card className="bg-white shadow-lg rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-xl">
-              <CardHeader className="text-center">
-                <MapPin className="h-16 w-16 text-stg-yellow mx-auto mb-4" />
-                <CardTitle className="text-2xl font-bold text-stg-gray">Apply In Person</CardTitle>
-                <CardDescription className="text-gray-600">
-                  Visit our campus for personalized assistance
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-yellow" />
-                    Face-to-face guidance from admissions staff
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-yellow" />
-                    Campus tour and facility viewing
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-yellow" />
-                    Immediate document verification
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-stg-yellow" />
-                    Meet with program coordinators
-                  </li>
-                </ul>
-                <Button asChild className="w-full bg-stg-yellow text-stg-gray hover:bg-stg-yellow/90">
-                  <Link href="/contact">Visit Our Campus</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Step-by-Step Process */}
-          <div className="mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-stg-gray mb-8 text-center">
-              Step-by-Step Application Guide
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {applicationSteps.map((step, index) => (
-                <Card key={step.step} className="bg-white shadow-lg rounded-lg p-6 relative">
-                  <div className="absolute -top-4 -left-4 bg-stg-sky-blue text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    {step.step}
-                  </div>
-                  <CardHeader className="pt-4">
-                    <step.icon className="h-12 w-12 text-stg-yellow mb-4" />
-                    <CardTitle className="text-xl font-bold text-stg-gray">{step.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">{step.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              <Button asChild variant="link" className="p-0 text-slate-200">
+                <Link href="/brochure.pdf" className="inline-flex items-center gap-2 underline-offset-4 hover:underline">
+                  <Download className="h-4 w-4" /> Download Brochure (PDF)
+                </Link>
+              </Button>
             </div>
           </div>
 
-          {/* Required Documents */}
-          <Card className="bg-stg-gray text-white p-8">
-            <CardHeader className="text-center">
-              <FileText className="h-16 w-16 text-stg-yellow mx-auto mb-4" />
-              <CardTitle className="text-2xl font-bold">Required Documents</CardTitle>
-              <CardDescription className="text-gray-300">Prepare these documents for your application</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-stg-yellow mb-3">Academic Documents</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      SSCE/WAEC/NECO Certificate
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      School Leaving Certificate
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      Transcript (if applicable)
-                    </li>
-                  </ul>
+          <aside id="requirements" className="space-y-4 lg:col-span-4">
+            <Card className="border-stg-sky-blue/30 bg-white/5 text-slate-100">
+              <CardHeader>
+                <div className="flex items-center justify-between gap-3">
+                  <CardTitle>Admission Requirements</CardTitle>
+                  <Badge className="bg-stg-sky-blue/15 text-stg-sky-blue">Mandatory</Badge>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-stg-yellow mb-3">Personal Documents</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      Birth Certificate or Age Declaration
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      Valid ID (National ID, Voter&apos;s Card, etc.)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      Passport Photographs (4 copies)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-stg-yellow" />
-                      Local Government Identification Letter
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="mt-6 text-center">
-                <Button
-                  variant="outline"
-                  className="bg-transparent border-stg-yellow text-stg-yellow hover:bg-stg-yellow hover:text-stg-gray"
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Application Form
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Admission Requirements Section */}
-      <section id="requirements" className="py-16 md:py-24 bg-stg-sky-blue text-white">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Admission Requirements</h2>
-            <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-              Our admission requirements are designed to ensure students have the foundation needed for success in their
-              chosen technical programs.
-            </p>
-          </div>
-
-          {/* General Requirements */}
-          <Card className="bg-white text-stg-gray shadow-lg rounded-lg p-8 mb-12">
-            <CardHeader className="text-center">
-              <AlertCircle className="h-16 w-16 text-stg-yellow mx-auto mb-4" />
-              <CardTitle className="text-2xl font-bold">General Admission Criteria</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <Users className="h-12 w-12 text-stg-sky-blue mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold mb-2">Age Requirements</h4>
-                  <p className="text-gray-700">
-                    Minimum age of 16 years for most programs, with upper age limits varying by program type.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <GraduationCap className="h-12 w-12 text-stg-sky-blue mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold mb-2">Academic Qualifications</h4>
-                  <p className="text-gray-700">
-                    SSCE/WAEC certificate with required credit passes in relevant subjects.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <FileText className="h-12 w-12 text-stg-sky-blue mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold mb-2">Entrance Assessment</h4>
-                  <p className="text-gray-700">
-                    Program-specific aptitude tests, practical assessments, or portfolio reviews.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Program-Specific Requirements */}
-          <div className="space-y-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">Program-Specific Requirements</h3>
-            {programRequirements.map((category, index) => (
-              <Card key={category.category} className="bg-white text-stg-gray shadow-lg rounded-lg overflow-hidden">
-                <CardHeader className="bg-stg-gray text-white">
-                  <CardTitle className="text-xl font-bold">{category.category}</CardTitle>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-stg-sky-blue mb-3">Programs Included:</h4>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {category.programs.map((program, pIndex) => (
-                          <Badge
-                            key={pIndex}
-                            variant="outline"
-                            className="bg-stg-sky-blue/10 text-stg-sky-blue border-stg-sky-blue"
-                          >
-                            {program}
-                          </Badge>
-                        ))}
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-4">
+                  {requirements.map((item) => (
+                    <li key={item.title} className="flex gap-3">
+                      <span
+                        className={`mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full border ${
+                          item.done ? "border-stg-sky-blue" : "border-slate-600"
+                        }`}
+                        aria-hidden="true"
+                      >
+                        {item.done ? <CheckCircle2 className="h-3.5 w-3.5 text-stg-sky-blue" /> : null}
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold">{item.title}</p>
+                        <p className="text-xs text-slate-400">{item.detail}</p>
                       </div>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-stg-sky-blue mb-3">Requirements:</h4>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <Calendar className="h-5 w-5 text-stg-yellow" />
-                          <span>
-                            <strong>Age Range:</strong> {category.requirements.age}
-                          </span>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <GraduationCap className="h-5 w-5 text-stg-yellow mt-1" />
-                          <span>
-                            <strong>Education:</strong> {category.requirements.education}
-                          </span>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <FileText className="h-5 w-5 text-stg-yellow mt-1" />
-                          <span>
-                            <strong>Entrance Test:</strong> {category.requirements.entrance}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <Clock className="h-5 w-5 text-stg-yellow" />
-                          <span>
-                            <strong>Duration:</strong> {category.requirements.duration}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="rounded-lg border border-stg-sky-blue/20 bg-stg-sky-blue/10 p-3 text-xs text-slate-200">
+                  <p className="flex items-start gap-2">
+                    <Info className="mt-0.5 h-4 w-4 shrink-0 text-stg-sky-blue" />
+                    Need help with your documents? Contact admissions@stgabrieltech.com for support before submitting.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-white/10 bg-gradient-to-br from-stg-sky-blue/15 to-transparent text-slate-100">
+              <CardContent className="space-y-3 p-6">
+                <p className="text-xs uppercase tracking-wide text-slate-400">Current Capacity</p>
+                <p className="text-sm">Application slots filled</p>
+                <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800" role="img" aria-label="65 percent slots filled">
+                  <div className="h-full w-[65%] rounded-full bg-stg-sky-blue" />
+                </div>
+                <p className="text-xs text-slate-400">Applications are reviewed on a first-come, first-served basis.</p>
+              </CardContent>
+            </Card>
+
+            <Button asChild className="w-full bg-stg-yellow text-stg-gray hover:bg-stg-yellow/90">
+              <Link href="/contact">Talk to Admissions Team</Link>
+            </Button>
+          </aside>
         </div>
       </section>
 
-      {/* Financial Assistance Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">Financial Assistance Available</h2>
-          <p className="text-lg text-gray-700 mb-8">
-            We believe quality technical education should be accessible to all qualified students. Explore our financial
-            assistance options.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-white shadow-lg rounded-lg p-6">
-              <CardHeader>
-                <GraduationCap className="h-12 w-12 text-stg-sky-blue mx-auto mb-4" />
-                <CardTitle className="text-xl font-bold text-stg-gray">Scholarships</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">Merit-based and need-based scholarships for outstanding students.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white shadow-lg rounded-lg p-6">
-              <CardHeader>
-                <Calendar className="h-12 w-12 text-stg-yellow mx-auto mb-4" />
-                <CardTitle className="text-xl font-bold text-stg-gray">Payment Plans</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">Flexible installment options to manage tuition costs effectively.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white shadow-lg rounded-lg p-6">
-              <CardHeader>
-                <Clock className="h-12 w-12 text-stg-sky-blue mx-auto mb-4" />
-                <CardTitle className="text-xl font-bold text-stg-gray">Deferred Payment</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700">
-                  Start tuition payments after securing employment through our job placement services.
-                </p>
-              </CardContent>
-            </Card>
+      <section className="relative border-t border-white/10 bg-slate-900/40 py-12">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6">
+          <div>
+            <h3 className="text-xl font-bold">Ready to begin?</h3>
+            <p className="text-sm text-slate-300">Submit your application today and secure your place at St. Gabriel.</p>
           </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="bg-stg-sky-blue text-white hover:bg-stg-sky-blue/90">
+                Apply Now <FileCheck2 className="ml-2 h-4 w-4" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-3xl">
+              <DialogHeader>
+                <DialogTitle>Application Form</DialogTitle>
+              </DialogHeader>
+              <ApplicationForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
-
-      {/* Call to Action */}
-      
     </div>
   )
 }
