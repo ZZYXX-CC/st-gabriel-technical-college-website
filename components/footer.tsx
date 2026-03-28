@@ -72,7 +72,6 @@ export function Footer() {
                   { href: "/about", label: "About Us" },
                   { href: "/admissions", label: "Admissions" },
                   { href: "/programs", label: "Programs" },
-                  { href: "/news", label: "News" },
                   { href: "/contact", label: "Contact" }
                 ].map(({ href, label }) => (
                   <Link 
@@ -99,7 +98,7 @@ export function Footer() {
                   { href: "https://st-gabriels-technical-schools-lms.vercel.app/", label: "Online Courses (LMS)", external: true },
                   { href: "#", label: "Student Life", external: false },
                   { href: "https://store.stgabrieltech.com", label: "Store", external: true },
-                  { href: "/news", label: "News & Events", external: false }
+                  { href: "#", label: "News & Events", external: false }
                 ].map(({ href, label, external }) => (
                   <Link 
                     key={label}
