@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle2, PlayCircle, Shield, Zap, Wrench, Video, MessageCircle } from "lucide-react"
+import { ArrowRight, CheckCircle2, PlayCircle, Shield, Zap, Wrench } from "lucide-react"
 
 const highlights = [
   { label: "Specialized Programs", value: "20+" },
-  { label: "Employment Rate", value: "95%" },
+  { label: "Employment Focus", value: "Practical" },
   { label: "Career-Ready Training", value: "Project-Based" },
   { label: "Hands-on Lab", value: "100%" },
 ]
@@ -13,23 +13,23 @@ const courses = [
   {
     title: "Cybersecurity Fundamentals",
     description:
-      "Master the art of digital defense. Learn network security, threat assessment, and protective measures for modern digital infrastructure from industry experts.",
+      "Learn the essentials of network security, threat awareness, and practical digital defense for modern workplaces.",
     icon: Shield,
     accent: "#4a94c4",
     panel: "#d6e9f6",
   },
   {
-    title: "Smart Energy Systems",
+    title: "Renewable Energy Systems",
     description:
-      "Lead the green revolution. Comprehensive training in electrical systems, wiring, and safety protocols for modern residential and commercial environments.",
+      "Build practical skills in solar, power systems, and modern energy infrastructure with hands-on technical training.",
     icon: Zap,
     accent: "#ffd400",
     panel: "#fff5bf",
   },
   {
-    title: "Precision Fabrication",
+    title: "Welding & Fabrication",
     description:
-      "Master the craft of metal fabrication with state-of-the-art tools. From architectural welding to industrial assembly, gain the skills modern industry demands.",
+      "Train with modern tools and workshop methods to develop durable fabrication and metalwork skills employers need.",
     icon: Wrench,
     accent: "#626161",
     panel: "#ececec",
@@ -39,23 +39,23 @@ const courses = [
 const news = [
   {
     tag: "EVENT",
-    date: "MAY 15, 2026",
-    title: "Annual Robotics Club Competition Winners Announced",
-    body: "Our students showcased incredible innovation at the 2026 robotics showcase, featuring AI-driven automation.",
+    date: "MAY 15, 2024",
+    title: "Annual Career Fair Success",
+    body: "Our annual career fair connected students with over 50 leading companies, resulting in internship and job opportunities.",
     image: "/asset/hero.jpg",
   },
   {
     tag: "FACILITY",
-    date: "APRIL 20, 2026",
-    title: "New HVAC Systems Lab Opens for Smart Energy Training",
-    body: "A state-of-the-art facility designed to provide hands-on experience with modern climate control systems.",
+    date: "APRIL 20, 2024",
+    title: "New HVAC Systems Lab Opens",
+    body: "A modern training lab now supports hands-on technical instruction in HVAC systems and energy-efficient equipment.",
     image: "/asset/hvac.png",
   },
   {
-    tag: "CAREER",
-    date: "MARCH 12, 2026",
-    title: "Connecting Students with Global Tech Giants",
-    body: "Last month&apos;s career fair saw record-breaking attendance from leading engineering and tech firms.",
+    tag: "COMPETITION",
+    date: "JUNE 1, 2024",
+    title: "Robotics Club Competition",
+    body: "Students represented the school proudly in regional innovation activities and practical technical showcases.",
     image: "/asset/hero-programs.jpg",
   },
 ]
@@ -67,14 +67,14 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
           <div>
             <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#d6e9f6] px-4 py-2 text-xs font-bold text-[#4a94c4]">
-              ADMISSIONS OPEN FOR FALL 2026
+              ADMISSIONS OPEN
             </p>
             <h1 className="mb-5 text-4xl font-extrabold leading-tight md:text-6xl">
               Empowering the Next Generation of <span className="text-[#4a94c4]">Technical Leaders</span>
             </h1>
             <p className="mb-8 max-w-xl text-lg text-[#626161]">
-              Join a future-ready technical community. We provide the tools, expertise, and environment for you to master
-              high-demand technical skills in Nigeria and beyond.
+              St. Gabriel Technical College equips students with practical, industry-relevant skills through hands-on
+              learning, experienced instructors, and a future-focused technical environment.
             </p>
 
             <div className="mb-8 flex flex-col gap-3 sm:flex-row">
@@ -105,7 +105,7 @@ export default function HomePage() {
             <div className="relative overflow-hidden rounded-2xl border border-white/70 bg-white/80 p-3 shadow-sm">
               <Image
                 src="/asset/hero-t.png"
-                alt="African students in modern technical learning environment"
+                alt="Students in a modern technical learning environment"
                 width={900}
                 height={700}
                 className="h-auto w-full rounded-xl object-cover"
@@ -114,53 +114,46 @@ export default function HomePage() {
             </div>
             <div className="relative mt-4 grid grid-cols-2 gap-3">
               <div className="rounded-xl border border-white/70 bg-white/85 p-3 text-xs font-semibold text-[#626161]">
-                ✓ Industry-Relevant Curriculum
+                Industry-Relevant Curriculum
               </div>
               <div className="rounded-xl border border-white/70 bg-white/85 p-3 text-xs font-semibold text-[#626161]">
-                ✓ Hands-on Labs & Workshops
+                Hands-on Labs & Workshops
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold md:text-4xl">Our Accredited Courses</h2>
-            <p className="mt-2 text-[#626161]">World-class technical training for a global workforce.</p>
+      <section className="px-6 pb-6">
+        <div className="mx-auto max-w-6xl rounded-[2rem] bg-[#f8fafc] p-8 md:p-10">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#4a94c4]">Featured learning paths</p>
+              <h2 className="mt-2 text-3xl font-extrabold">Build practical skills that matter</h2>
+            </div>
+            <Link href="/programs" className="inline-flex items-center gap-2 font-semibold text-[#4a94c4]">
+              View all programs <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
-          <div className="space-y-8">
+          <div className="grid gap-5 md:grid-cols-3">
             {courses.map((course) => {
               const Icon = course.icon
               return (
                 <article
                   key={course.title}
-                  className="grid overflow-hidden rounded-[2rem] border border-[#e5e7eb] md:grid-cols-2"
+                  className="rounded-[1.75rem] border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
-                  <div className="p-10">
-                    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl" style={{ backgroundColor: course.panel }}>
-                      <Icon className="h-5 w-5" style={{ color: course.accent }} />
-                    </div>
-                    <h3 className="mb-3 text-2xl font-bold">{course.title}</h3>
-                    <p className="mb-6 text-[#626161]">{course.description}</p>
-                    <button className="rounded-xl px-5 py-2 font-semibold text-white" style={{ backgroundColor: course.accent }}>
-                      Learn More
-                    </button>
+                  <div
+                    className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl"
+                    style={{ backgroundColor: course.panel }}
+                  >
+                    <Icon className="h-6 w-6" style={{ color: course.accent }} />
                   </div>
-                  <div className="flex items-center justify-center p-10" style={{ backgroundColor: course.panel }}>
-                    <div className="w-full max-w-sm rounded-2xl border border-white/70 bg-white/75 p-6 shadow-sm">
-                      <div className="mb-3 h-2 w-24 rounded-full bg-white" />
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm text-[#626161]">
-                          <CheckCircle2 className="h-4 w-4" style={{ color: course.accent }} /> Module 1 complete
-                        </div>
-                        <div className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm text-[#626161]">
-                          <CheckCircle2 className="h-4 w-4" style={{ color: course.accent }} /> Hands-on assessment ready
-                        </div>
-                      </div>
-                    </div>
+                  <h3 className="text-xl font-bold text-[#1f2937]">{course.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[#626161]">{course.description}</p>
+                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#4a94c4]">
+                    Learn more <ArrowRight className="h-4 w-4" />
                   </div>
                 </article>
               )
@@ -169,27 +162,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-[#e5e7eb] bg-[#f8fafc] px-6 py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-          <div>
-            <p className="mb-4 inline-block rounded-full bg-[#d6e9f6] px-3 py-1 text-xs font-bold text-[#4a94c4]">HYBRID LEARNING</p>
-            <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
-              Learn Technical Skills <span className="text-[#4a94c4]">Anywhere, Anytime.</span>
-            </h2>
-            <p className="mb-6 text-[#626161]">
-              Access our state-of-the-art Learning Management System. Stream lectures, complete interactive assessments,
-              and track your progress in real-time.
-            </p>
-            <div className="space-y-4 text-sm text-[#626161]">
-              <p className="flex items-center gap-2"><Video className="h-4 w-4 text-[#4a94c4]" /> On-demand lectures</p>
-              <p className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-[#4a94c4]" /> Expert mentorship</p>
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-[#e5e7eb] bg-white p-8 md:p-10">
+          <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#4a94c4]">Why St. Gabriel</p>
+              <h2 className="mt-2 text-3xl font-extrabold">A learning experience built for employability</h2>
+              <p className="mt-4 max-w-2xl text-[#626161]">
+                Our training model combines technical instruction, guided practice, and exposure to real-world tools so
+                students graduate with confidence and usable skills.
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Hands-on workshops and practical sessions",
+                  "Experienced instructors and structured guidance",
+                  "Career-focused programs aligned with market needs",
+                  "Supportive environment for technical growth",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl bg-[#f8fafc] p-4 text-sm text-[#374151]">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-[#4a94c4]" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <Link href="https://st-gabriels-technical-schools-lms.vercel.app/" className="mt-8 inline-block rounded-xl bg-[#4a94c4] px-6 py-3 font-semibold text-white">
-              Explore LMS Dashboard
-            </Link>
-          </div>
-          <div className="relative overflow-hidden rounded-[2rem] border border-[#e5e7eb]">
-            <Image src="/asset/study-online.png" alt="Student using laptop for online learning" width={900} height={700} className="h-full w-full object-cover" />
+
+            <div className="overflow-hidden rounded-[1.75rem] bg-[#f8fbff] p-4">
+              <Image
+                src="/asset/front-w.jpg"
+                alt="St. Gabriel campus view"
+                width={900}
+                height={700}
+                className="h-auto w-full rounded-2xl object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -198,25 +204,28 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-extrabold">Latest Tech News</h2>
+              <h2 className="text-3xl font-extrabold">Latest News</h2>
               <p className="mt-2 text-[#626161]">Updates from the St. Gabriel technical community.</p>
             </div>
-            <Link href="/news" className="inline-flex items-center gap-1 font-semibold text-[#4a94c4]">
+            <Link href="/news-events" className="inline-flex items-center gap-1 font-semibold text-[#4a94c4]">
               View All Articles <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {news.map((item) => (
-              <article key={item.title} className="overflow-hidden rounded-3xl border border-[#e5e7eb] bg-white">
+              <article key={item.title} className="overflow-hidden rounded-[1.75rem] border border-[#e5e7eb] bg-white shadow-sm">
                 <div className="relative h-52">
                   <Image src={item.image} alt={item.title} fill className="object-cover" />
-                  <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-[10px] font-bold">{item.tag}</span>
                 </div>
                 <div className="p-6">
-                  <p className="mb-2 text-xs font-bold text-[#626161]">{item.date}</p>
-                  <h3 className="mb-2 text-lg font-bold">{item.title}</h3>
-                  <p className="text-sm text-[#626161]">{item.body}</p>
+                  <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[#4a94c4]">
+                    <span>{item.tag}</span>
+                    <span className="text-[#9ca3af]">•</span>
+                    <span className="text-[#626161]">{item.date}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#1f2937]">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[#626161]">{item.body}</p>
                 </div>
               </article>
             ))}
