@@ -180,7 +180,7 @@ export function Footer() {
             {/* Additional Bottom Text */}
             <div className="mt-4 text-center md:text-left">
               <p className="text-xs text-gray-500">
-                Accredited by the National Board for Technical Education (NBTE) • {" "}
+                Accredited by the National Board for Technical Education (NBTE) ΓÇó {" "}
                 <span className="text-stg-yellow">Building Tomorrow&apos;s Technical Leaders</span>
               </p>
             </div>

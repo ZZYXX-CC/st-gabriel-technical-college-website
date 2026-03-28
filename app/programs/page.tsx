@@ -1,6 +1,37 @@
 import Image from "next/image"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { AnimatedCard, CardBody as AnimatedCardBody, CardTitle as AnimatedCardTitle, CardDescription as AnimatedCardDescription, CardVisual } from "@/components/ui/interactive-bento-grid"
+import LottieVisual from "@/components/ui/lottie-visual"
 import Link from "next/link"
-import { ArrowUpRight, Car, Zap, Droplet, Thermometer, Hammer, HardHat, ShieldCheck, Laptop, Megaphone, BarChart, Shirt, Utensils, Camera, Video, BrickWallIcon as Brick, Paintbrush, Tally1Icon as Tally, Sun, PiggyBank, Code, Building, Lightbulb } from "lucide-react"
+import {
+  Car,
+  Zap,
+  Droplet,
+  Thermometer,
+  Hammer,
+  HardHat,
+  ShieldCheck,
+  Laptop,
+  Megaphone,
+  BarChart,
+  Shirt,
+  Utensils,
+  Camera,
+  Video,
+  BrickWallIcon as Brick,
+  Paintbrush,
+  Tally1Icon as Tally,
+  Sun,
+  PiggyBank,
+  Code,
+  Building,
+  Lightbulb,
+  ShoppingBag,
+  Briefcase,
+  Sparkles,
+} from "lucide-react"
 
 const programsData = [
   {
@@ -15,13 +46,15 @@ const programsData = [
       },
       {
         title: "Painting and Decoration",
-        description: "Learn surface preparation, colour use, and decorative finishing for practical interior and exterior work.",
+        description:
+          "Covers surface preparation, color theory, and decorative techniques for residential and commercial applications.",
         image: "/asset/paint.png",
         icon: Paintbrush,
       },
       {
         title: "Tiling and Floor Installation",
-        description: "Build precision skills for ceramic, stone, and specialist floor installation projects.",
+        description:
+          "Specialized program teaching ceramic, stone, and specialty tile installation with precision techniques.",
         image: "/asset/tiling.png",
         icon: Tally,
       },
@@ -33,51 +66,44 @@ const programsData = [
     programs: [
       {
         title: "AutoCare Technology",
-        description: "Comprehensive automotive training in maintenance, diagnostics, and workshop practice.",
+        description:
+          "Comprehensive automotive program equipping students with modern vehicle maintenance and repair skills.",
         image: "/asset/auto.jpeg",
         icon: Car,
       },
       {
         title: "Electrical Installation and Maintenance",
-        description: "Hands-on training in electrical systems, wiring, installation, and safety procedures.",
+        description:
+          "Thorough training in electrical systems, wiring, and safety protocols for residential and commercial work.",
         image: "/asset/electricals.png",
         icon: Zap,
       },
       {
         title: "Plumbing and Pipeline Services",
-        description: "Develop practical expertise in modern plumbing systems, pipe installation, and water maintenance.",
+        description: "Covers modern plumbing techniques, pipe installation, and water system maintenance.",
         image: "/asset/plumbing.png",
         icon: Droplet,
       },
       {
         title: "HVAC Systems Technology",
-        description: "Train in installation and maintenance of heating, ventilation, and air conditioning systems.",
+        description:
+          "Master heating, ventilation, and air conditioning systems installation and maintenance, including energy-efficient technologies.",
         image: "/asset/hvac.png",
         icon: Thermometer,
       },
       {
         title: "Welding and Fabrication",
-        description: "Learn core welding techniques and fabrication workflows using modern workshop equipment.",
+        description:
+          "Hands-on program teaching various welding techniques and metal fabrication skills with modern equipment.",
         image: "/asset/welding.png",
         icon: Hammer,
       },
       {
         title: "Carpentry and Joinery",
-        description: "Combine traditional woodworking skill with practical construction methods for real projects.",
+        description:
+          "Combines traditional woodworking techniques with modern construction methods for furniture making and construction carpentry.",
         image: "/asset/carpentry.png",
         icon: HardHat,
-      },
-    ],
-  },
-  {
-    category: "Health and Safety Programs",
-    icon: ShieldCheck,
-    programs: [
-      {
-        title: "Health and Safety Education (HSE)",
-        description: "Learn essential workplace safety standards, hazard awareness, and compliance basics.",
-        image: "/asset/hero-programs.jpg",
-        icon: ShieldCheck,
       },
     ],
   },
@@ -87,25 +113,28 @@ const programsData = [
     programs: [
       {
         title: "Cybersecurity Fundamentals",
-        description: "Build foundational skills in network security, cyber hygiene, and digital threat awareness.",
+        description:
+          "Cutting-edge program addressing the growing demand for cybersecurity professionals, covering network security and threat assessment.",
         image: "/asset/cyber.png",
         icon: ShieldCheck,
       },
       {
         title: "Computer System Repairs and Maintenance",
-        description: "Master troubleshooting, maintenance, and optimization for modern computer systems.",
+        description:
+          "Master hardware troubleshooting, system optimization, and computer maintenance, preparing graduates for technical support.",
         image: "/asset/computrt-repairs.png",
         icon: Laptop,
       },
       {
         title: "Digital Marketing Strategies",
-        description: "Learn practical content, social media, and online promotion strategies for business growth.",
+        description:
+          "Covers social media marketing, content creation, and online advertising strategies for business growth.",
         image: "/asset/digital-marketing.png",
         icon: Megaphone,
       },
       {
         title: "Data Analytics and Business Intelligence",
-        description: "Develop skills in collecting, interpreting, and presenting data for business decision-making.",
+        description: "Teaches students to collect, analyze, and interpret data for business decision-making.",
         image: "/asset/data-analytics.png",
         icon: BarChart,
       },
@@ -117,25 +146,28 @@ const programsData = [
     programs: [
       {
         title: "Fashion Design and Tailoring",
-        description: "Gain practical garment construction and fashion design skills rooted in real production workflows.",
+        description:
+          "Develop skills in garment construction, pattern making, and fashion design, combining traditional and contemporary trends.",
         image: "/asset/fashion-design.png",
         icon: Shirt,
       },
       {
         title: "Catering and Hospitality Management",
-        description: "Develop core food service, hospitality, and customer experience skills for the service industry.",
+        description:
+          "Comprehensive program covering food preparation, service excellence, and hospitality business management.",
         image: "/asset/catering.png",
         icon: Utensils,
       },
       {
         title: "Photography and Visual Arts",
-        description: "Learn image creation, photo editing, and visual storytelling using modern tools and techniques.",
+        description:
+          "Learn traditional and digital photography techniques, including photo editing and visual storytelling.",
         image: "/asset/photography.png",
         icon: Camera,
       },
       {
         title: "Videography and Media Production",
-        description: "Train in shooting, editing, and producing media content with practical project experience.",
+        description: "Teaches video production, editing, and media content creation with professional equipment.",
         image: "/asset/videography.png",
         icon: Video,
       },
@@ -147,13 +179,15 @@ const programsData = [
     programs: [
       {
         title: "Renewable Energy Systems",
-        description: "Learn solar and other sustainable energy technologies for the growing renewable energy sector.",
+        description:
+          "Learn solar panel installation, wind energy systems, and sustainable energy technologies for the growing renewable energy sector.",
         image: "/asset/energy.png",
         icon: Sun,
       },
       {
         title: "Animal Husbandry and Agricultural Technology",
-        description: "Combine traditional animal care with modern agricultural practices and business fundamentals.",
+        description:
+          "Combines traditional animal care with modern agricultural practices, including livestock management and agricultural business principles.",
         image: "/asset/animal-husbandry.png",
         icon: PiggyBank,
       },
@@ -163,72 +197,172 @@ const programsData = [
 
 export default function ProgramsPage() {
   return (
-    <div className="min-h-screen bg-[#f8fafc] px-4 pb-16 pt-28 sm:px-6 md:pt-32">
-      <div className="mx-auto max-w-7xl">
-        <header className="mb-10">
-          <h1 className="text-4xl font-black tracking-tight text-[#1f2937] md:text-5xl">Our Programs</h1>
-          <p className="mt-3 max-w-3xl text-lg text-[#626161]">
-            Explore our technical and vocational training pathways designed to equip students with practical,
-            employable skills across construction, engineering, digital technology, hospitality, and emerging sectors.
+    <div className="flex flex-col">
+      <section className="relative w-full h-[400px] flex items-center justify-center text-center overflow-hidden bg-stg-gray pt-16 md:pt-20 animate-fade-in">
+        <Image
+          src="/front-w.jpg"
+          alt="St. Gabriel Technical Institute Front"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+        <div className="relative z-10 px-4 md:px-6 max-w-3xl space-y-4 animate-fade-in">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">
+            Our Comprehensive Programs
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200">
+            Explore our diverse range of technical and vocational training programs designed to equip you with in-demand
+            skills.
           </p>
-        </header>
+        </div>
+      </section>
 
-        <section className="mb-12 overflow-hidden rounded-[2rem] bg-white shadow-sm">
-          <div className="relative h-[280px] md:h-[360px]">
-            <Image
-              src="/front-w.jpg"
-              alt="St. Gabriel Technical College front view"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-[#1f2937]/45" />
-            <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-              <div className="max-w-3xl text-white">
-                <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-[#ffd400]">Career-focused training</p>
-                <h2 className="text-3xl font-extrabold md:text-5xl">Comprehensive programs for real-world technical work</h2>
-                <p className="mt-4 text-base text-white/90 md:text-lg">
-                  Learn through structured instruction, workshop practice, and applied technical training built for modern industries.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="space-y-12">
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           {programsData.map((category) => (
-            <section key={category.category} className="rounded-[2rem] border border-[#e5e7eb] bg-white p-6 md:p-8">
-              <h2 className="mb-6 flex items-center gap-3 text-2xl font-extrabold text-[#1f2937] md:text-3xl">
-                <category.icon className="h-8 w-8 text-[#4a94c4]" />
+            <div key={category.category} className="mb-16 last:mb-0">
+              <h2 className="text-3xl md:text-4xl font-bold text-stg-gray mb-8 flex items-center gap-3">
+                <category.icon className="h-10 w-10 text-stg-sky-blue" />
                 {category.category}
               </h2>
-
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {category.programs.map((program) => (
-                  <article
+                  <Card
                     key={program.title}
-                    className="overflow-hidden rounded-[1.5rem] border border-[#e5e7eb] bg-[#fcfcfd] transition hover:-translate-y-1 hover:shadow-md"
+                    className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl animate-fade-in-up"
                   >
-                    <div className="relative h-52">
-                      <Image src={program.image} alt={program.title} fill className="object-cover" />
-                    </div>
-                    <div className="p-6">
-                      <div className="mb-3 flex items-start justify-between gap-3">
-                        <h3 className="text-xl font-bold text-[#1f2937]">{program.title}</h3>
-                        <program.icon className="mt-1 h-5 w-5 shrink-0 text-[#4a94c4]" />
-                      </div>
-                      <p className="text-sm leading-6 text-[#626161]">{program.description}</p>
-                      <Link href="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#4a94c4]">
-                        Inquire Now <ArrowUpRight className="h-4 w-4" />
-                      </Link>
-                    </div>
-                  </article>
+                    <Image
+                      src={program.image}
+                      alt={program.title}
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover"
+                    />
+                    <CardHeader>
+                      <CardTitle className="text-xl font-bold text-stg-gray flex items-center gap-2">
+                        <program.icon className="h-6 w-6 text-stg-yellow" />
+                        {program.title}
+                      </CardTitle>
+                      <CardDescription className="text-gray-600">{program.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button asChild className="bg-stg-sky-blue text-white hover:bg-stg-sky-blue/90">
+                        <Link href="/contact">Inquire Now</Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
-            </section>
+            </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-gray-200 text-stg-sky-blue border-gray-300">Opportunity</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold">
+              <span className="text-stg-sky-blue">Earn While You Study</span>
+            </h2>
+            <p className="mt-4 text-lg md:text-xl text-stg-gray max-w-3xl mx-auto">
+              List your products or services on our school-backed online store, connect with real customers, and start earning while you learn.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 place-items-center">
+            {[
+              { icon: ShoppingBag, title: "School-backed visibility", desc: "Reach customers who trust our platform", visual: (
+                <LottieVisual
+                  src="https://lottie.host/1e716099-5349-475e-9c06-a84cf538354e/I3gknEluWE.lottie"
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                  showBlur
+                  blurColor="rgba(139,92,246,0.25)"
+                />
+              ) },
+              { icon: ShieldCheck, title: "Fair, transparent fees", desc: "Student-first policies—keep more of what you earn", visual: (
+                <LottieVisual src="https://lottie.host/9c05b91c-4fac-4a8e-84c5-ca7fe0bb95f5/6mGM11WA8f.lottie" autoplay loop />
+              ) },
+              { icon: Briefcase, title: "Real clients & projects", desc: "Gain practical experience while you study", visual: (
+                <LottieVisual
+                  src="https://lottie.host/f7794f73-b8e5-422d-b93a-9780bfe2102c/RrGKhgBzN1.lottie"
+                  autoplay
+                  loop
+                />
+              ) },
+              { icon: Sparkles, title: "Build your brand", desc: "Grow your portfolio and reputation", visual: (
+                <LottieVisual
+                  src="https://lottie.host/54cde0d3-e112-4946-a59d-8dfd0798e0a7/xk5fgxfJrx.lottie"
+                  autoplay
+                  loop
+                  showGrid
+                  gridColor="rgba(147,183,190,0.18)"
+                />
+              ) },
+            ].map(({ icon: Icon, title, desc, visual }) => (
+              <AnimatedCard key={title} className="w-full">
+                <CardVisual>
+                  {visual}
+                </CardVisual>
+                <AnimatedCardBody>
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 rounded-xl p-3 bg-white/70 border border-white/50 shadow-inner">
+                      <Icon className="h-6 w-6 text-stg-sky-blue" />
+                    </div>
+                    <div>
+                      <AnimatedCardTitle className="text-stg-sky-blue">{title}</AnimatedCardTitle>
+                      <AnimatedCardDescription className="text-stg-gray mt-2">{desc}</AnimatedCardDescription>
+                    </div>
+                  </div>
+                </AnimatedCardBody>
+              </AnimatedCard>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild className="bg-stg-sky-blue hover:bg-stg-sky-blue/90 text-white">
+              <a href="https://store.stgabrieltech.com" target="_blank" rel="noopener noreferrer">Visit the Store</a>
+            </Button>
+            <Button asChild variant="outline" className="border-gray-300 text-stg-sky-blue hover:bg-gray-100">
+              <a href="https://store.stgabrieltech.com" target="_blank" rel="noopener noreferrer">Start Selling</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-stg-yellow">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-stg-gray mb-6">
+            Can&apos;t Attend On-Campus? Try Our Online Courses
+          </h2>
+          <p className="text-lg text-stg-gray mb-8 max-w-3xl mx-auto">
+            Access many of our technical programs through our comprehensive Learning Management System. Perfect for
+            working professionals, remote learners, and those seeking flexible scheduling.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-stg-gray mb-3">Short Programs</h3>
+              <p className="text-gray-700">Intensive courses designed for quick skill acquisition and career advancement.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-stg-gray mb-3">Specialized Courses</h3>
+              <p className="text-gray-700">Focused training in specific technical areas and emerging technologies.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-stg-gray mb-3">Flexible Learning</h3>
+              <p className="text-gray-700">Study at your own pace with 24/7 access to course materials and support.</p>
+            </div>
+          </div>
+          <Button asChild className="bg-stg-sky-blue text-white hover:bg-stg-sky-blue/90 px-10 py-4 text-xl font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <Link href="https://st-gabriels-technical-schools-lms.vercel.app/" target="_blank" rel="noopener noreferrer">
+              Explore Online Courses
+            </Link>
+          </Button>
+        </div>
+      </section>
     </div>
   )
 }
