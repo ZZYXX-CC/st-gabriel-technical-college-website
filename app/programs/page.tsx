@@ -6,71 +6,198 @@ import { ArrowUpRight, Search } from "lucide-react"
 import { useMemo, useState } from "react"
 
 const quickStats = [
-  { title: "Program Tracks", value: "Multiple technical pathways" },
-  { title: "Learning Model", value: "Lab-first and project-based" },
-  { title: "Industry Focus", value: "Built for modern workforce needs" },
+  { title: "Program Tracks", value: "6 broad career categories" },
+  { title: "Training Style", value: "Hands-on, lab-first learning" },
+  { title: "Coverage", value: "Full catalog restored from previous version" },
 ]
 
-const filters = ["All Categories", "Engineering", "Digital Arts", "Energy", "IT & Systems"]
+const filters = [
+  "All Categories",
+  "Construction",
+  "Engineering",
+  "Health & Safety",
+  "Digital Technology",
+  "Creative & Hospitality",
+  "Emerging Technologies",
+]
 
 const programs = [
   {
-    category: "Engineering",
-    title: "Industrial Automation & Mechatronics",
+    category: "Construction",
+    title: "Masonry and Stonework",
     description:
-      "Master the integration of mechanical systems, electronics, and smart control logic in modern manufacturing environments.",
-    tagOne: "HIGH CAREER OUTLOOK",
-    tagTwo: "2 YEARS",
+      "Master brick laying, stone cutting, and structural masonry techniques for construction projects.",
+    tagOne: "BUILDING TRADES",
+    image: "/asset/masonry.png",
+  },
+  {
+    category: "Construction",
+    title: "Painting and Decoration",
+    description:
+      "Covers surface preparation, color theory, and decorative techniques for residential and commercial applications.",
+    tagOne: "FINISHING SKILLS",
+    image: "/asset/paint.png",
+  },
+  {
+    category: "Construction",
+    title: "Tiling and Floor Installation",
+    description:
+      "Specialized program teaching ceramic, stone, and specialty tile installation with precision techniques.",
+    tagOne: "PRACTICAL TRAINING",
+    image: "/asset/tiling.png",
+  },
+  {
+    category: "Engineering",
+    title: "AutoCare Technology",
+    description:
+      "Comprehensive automotive program equipping students with modern vehicle maintenance and repair skills.",
+    tagOne: "AUTOMOTIVE",
+    tagTwo: "HANDS-ON",
     image: "/asset/auto.jpeg",
   },
   {
-    category: "IT & Systems",
-    title: "Cybersecurity & Network Defense",
+    category: "Engineering",
+    title: "Electrical Installation and Maintenance",
     description:
-      "Secure digital infrastructures through hands-on penetration testing, network hardening, and security architecture.",
-    tagOne: "PROJECT-BASED",
-    tagTwo: "1.5 YEARS",
+      "Thorough training in electrical systems, wiring, and safety protocols for residential and commercial work.",
+    tagOne: "SAFETY-LED",
+    tagTwo: "CORE TRADE",
+    image: "/asset/electricals.png",
+  },
+  {
+    category: "Engineering",
+    title: "Plumbing and Pipeline Services",
+    description:
+      "Covers modern plumbing techniques, pipe installation, and water system maintenance.",
+    tagOne: "UTILITY SYSTEMS",
+    image: "/asset/plumbing.png",
+  },
+  {
+    category: "Engineering",
+    title: "HVAC Systems Technology",
+    description:
+      "Master heating, ventilation, and air conditioning systems installation and maintenance, including energy-efficient technologies.",
+    tagOne: "CLIMATE SYSTEMS",
+    image: "/asset/hvac.png",
+  },
+  {
+    category: "Engineering",
+    title: "Welding and Fabrication",
+    description:
+      "Hands-on program teaching various welding techniques and metal fabrication skills with modern equipment.",
+    tagOne: "METALWORK",
+    image: "/asset/welding.png",
+  },
+  {
+    category: "Engineering",
+    title: "Carpentry and Joinery",
+    description:
+      "Combines traditional woodworking techniques with modern construction methods for furniture making and construction carpentry.",
+    tagOne: "WOODWORK",
+    image: "/asset/carpentry.png",
+  },
+  {
+    category: "Health & Safety",
+    title: "Health and Safety Education (HSE)",
+    description:
+      "Essential workplace health and safety standards, risk assessment, and compliance training.",
+    tagOne: "COMPLIANCE",
+    image: "/asset/hero-programs.jpg",
+  },
+  {
+    category: "Digital Technology",
+    title: "Cybersecurity Fundamentals",
+    description:
+      "Cutting-edge program addressing the growing demand for cybersecurity professionals, covering network security and threat assessment.",
+    tagOne: "SECURITY",
     image: "/asset/cyber.png",
   },
   {
-    category: "Digital Arts",
-    title: "Visual Comm. & UI/UX Design",
+    category: "Digital Technology",
+    title: "Computer System Repairs and Maintenance",
     description:
-      "Bridge aesthetics and usability to create practical digital products using modern design tools and workflows.",
-    tagOne: "PORTFOLIO-DRIVEN",
+      "Master hardware troubleshooting, system optimization, and computer maintenance, preparing graduates for technical support roles.",
+    tagOne: "IT SUPPORT",
+    image: "/asset/computrt-repairs.png",
+  },
+  {
+    category: "Digital Technology",
+    title: "Digital Marketing Strategies",
+    description:
+      "Covers social media marketing, content creation, and online advertising strategies for business growth.",
+    tagOne: "MARKETING",
+    image: "/asset/digital-marketing.png",
+  },
+  {
+    category: "Digital Technology",
+    title: "Data Analytics and Business Intelligence",
+    description:
+      "Teaches students to collect, analyze, and interpret data for business decision-making.",
+    tagOne: "ANALYTICS",
+    image: "/asset/data-analytics.png",
+  },
+  {
+    category: "Digital Technology",
+    title: "Web Development",
+    description:
+      "Learn modern web design and development with HTML, CSS, JavaScript, and frameworks.",
+    tagOne: "WEB SKILLS",
     image: "/asset/web-design-SGT.jpg",
   },
   {
-    category: "Energy",
+    category: "Creative & Hospitality",
+    title: "Fashion Design and Tailoring",
+    description:
+      "Develop skills in garment construction, pattern making, and fashion design, combining traditional and contemporary trends.",
+    tagOne: "CREATIVE TRADE",
+    image: "/asset/fashion-design.png",
+  },
+  {
+    category: "Creative & Hospitality",
+    title: "Catering and Hospitality Management",
+    description:
+      "Comprehensive program covering food preparation, service excellence, and hospitality business management.",
+    tagOne: "HOSPITALITY",
+    image: "/asset/catering.png",
+  },
+  {
+    category: "Creative & Hospitality",
+    title: "Photography and Visual Arts",
+    description:
+      "Learn traditional and digital photography techniques, including photo editing and visual storytelling.",
+    tagOne: "VISUAL ARTS",
+    image: "/asset/photography.png",
+  },
+  {
+    category: "Creative & Hospitality",
+    title: "Videography and Media Production",
+    description:
+      "Teaches video production, editing, and media content creation with professional equipment.",
+    tagOne: "MEDIA",
+    image: "/asset/videography.png",
+  },
+  {
+    category: "Emerging Technologies",
     title: "Renewable Energy Systems",
     description:
-      "Build practical expertise in solar, wind, and sustainable power systems for modern infrastructure.",
+      "Learn solar panel installation, wind energy systems, and sustainable energy technologies for the growing renewable energy sector.",
     tagOne: "FUTURE-FOCUSED",
     image: "/asset/energy.png",
   },
   {
-    category: "Engineering",
-    title: "Electrical Installation & Maintenance",
+    category: "Emerging Technologies",
+    title: "Animal Husbandry and Agricultural Technology",
     description:
-      "Learn safe installation, maintenance, and diagnostics of residential and commercial electrical systems.",
-    tagOne: "SAFETY-LED",
-    tagTwo: "1 YEAR",
-    image: "/asset/electricals.png",
-  },
-  {
-    category: "IT & Systems",
-    title: "Data Analytics Fundamentals",
-    description:
-      "Develop core analytics, dashboarding, and reporting skills for data-driven decision support.",
-    tagOne: "ANALYTICS CORE",
-    image: "/asset/data-analytics.png",
+      "Combines traditional animal care with modern agricultural practices, including livestock management and agricultural business principles.",
+    tagOne: "AGRIC-TECH",
+    image: "/asset/animal-husbandry.png",
   },
 ]
 
 export default function ProgramsPage() {
   const [activeFilter, setActiveFilter] = useState("All Categories")
   const [query, setQuery] = useState("")
-  const [visibleCount, setVisibleCount] = useState(4)
+  const [visibleCount, setVisibleCount] = useState(6)
 
   const filteredPrograms = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -107,7 +234,7 @@ export default function ProgramsPage() {
           <div className="rounded-2xl border border-[#ffd400]/60 bg-[#fff8d6] p-6">
             <p className="text-sm font-bold text-[#626161]">Need guidance?</p>
             <p className="mt-2 text-xs text-[#626161]">
-              Schedule a virtual campus tour or chat with our admissions team today.
+              Talk to admissions to find the right program for your goals and background.
             </p>
             <Link href="/contact" className="mt-4 block rounded-xl bg-white px-4 py-2 text-center text-sm font-semibold text-[#4a94c4]">
               Book a Consultation
@@ -119,8 +246,7 @@ export default function ProgramsPage() {
           <header>
             <h1 className="text-4xl font-black tracking-tight text-[#1f2937] md:text-5xl">Our Programs</h1>
             <p className="mt-2 max-w-2xl text-lg text-[#626161]">
-              Explore specialized vocational pathways designed to bridge the gap between education and high-demand
-              technical careers.
+              Explore the full St. Gabriel catalog across technical, creative, digital, and industry-relevant vocational pathways.
             </p>
           </header>
 
@@ -130,11 +256,11 @@ export default function ProgramsPage() {
                 <Search className="h-4 w-4 text-[#626161]" />
                 <input
                   className="w-full bg-transparent text-sm outline-none placeholder:text-[#9ca3af]"
-                  placeholder="Search programs (e.g. Mechatronics, Cybersecurity...)"
+                  placeholder="Search programs (e.g. Welding, Fashion, Cybersecurity...)"
                   value={query}
                   onChange={(e) => {
                     setQuery(e.target.value)
-                    setVisibleCount(4)
+                    setVisibleCount(6)
                   }}
                 />
               </div>
@@ -146,7 +272,7 @@ export default function ProgramsPage() {
                       key={filter}
                       onClick={() => {
                         setActiveFilter(filter)
-                        setVisibleCount(4)
+                        setVisibleCount(6)
                       }}
                       className={`whitespace-nowrap rounded-xl px-4 py-2 text-sm font-medium transition ${
                         activeFilter === filter
@@ -199,7 +325,7 @@ export default function ProgramsPage() {
           <div className="py-6 text-center">
             <button
               disabled={!canLoadMore}
-              onClick={() => setVisibleCount((v) => v + 4)}
+              onClick={() => setVisibleCount((v) => v + 6)}
               className={`rounded-xl border px-8 py-3 text-sm font-bold ${
                 canLoadMore
                   ? "border-[#d1d5db] bg-white text-[#626161] hover:bg-[#f9fafb]"
